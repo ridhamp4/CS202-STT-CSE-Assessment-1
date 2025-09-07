@@ -1,0 +1,714 @@
+hash,msg,parents,is_merge,files,is_bugfix
+6959b0368460e2787dcd08cd7db7d11e74e87e06,"Broke up UI into two phases
+Support multiple documents with their own state
+Fixed cancel and made it exception based",['8d05e1d234b58d995a1f69b50984e5760d4f6531'],False,"['TODO.md', 'diffusion.py', 'document.py', 'settings.py', 'widget.py', 'workflow.py', 'pyproject.toml']",True
+c437d8b3694bc969f864c5d65fcbcbf7e74b8fa8,"Added upscale which does not tile the image but used tiled VAE extension
+Fixed image bounds clamp at borders
+Fixed multi document sharing image collection
+Improved error handling",['b0111a8224cd08a50878081a2028ab63d9cbb3cf'],False,"['TODO.md', 'diffusion.py', 'image.py', 'widget.py', 'test_image.py']",True
+d628817c5fe8b71b1bf15d526a7741b6910ced90,"Comfy: added settings for checkpoint and sampler
+Also improved error handling",['0d4f24bc44037d6a248bc1042d63695379d86214'],False,"['TODO.md', '__init__.py', 'client.py', 'comfyworkflow.py', 'extension.py', 'settings.py', 'connection.py', 'settings.py', 'workflow.py', 'test_workflow.py']",True
+510dde32f9c3b176b8dca8b6cb7a43d9f398a212,Comfy: fix batch size not working for inpaint,['0116a432a32929bd32a688dc3d88f9d21ea7fe07'],False,"['image.py', 'widget.py', 'workflow.py', 'test_workflow.py']",True
+6fb8116ccf14fd6501e705eca794d51d1193c444,Fixed style when opening settings / switching document,['b4e00bdd6cce5c118861d21e5d6936a0a44cf984'],False,['widget.py'],True
+c90bb202ef9f6fc2a1cb5346bd96483d052c9696,Fixed external server mode,['2ac374124b38ead10587ea85a5dbac33781909f7'],False,['settings.py'],True
+f82f398aa6afed00927d70b63bf7c82f6d0eb799,Handle server errors reported via websocket,['ccbec1c3cfcc9f0d7391854996ebfbbb7db50289'],False,"['client.py', 'model.py']",True
+338822f06622b050b6261a5a03edb12c8b7ee045,Don't pass mask to IP adapter for now (sometimes causes errors),['a9c905148d526fa425587f0811b237b35e890609'],False,"['comfyworkflow.py', 'workflow.py']",True
+67d36ca402884f9914ac4225fe56345ec1bd4adc,"Fixed issue when there are error/cancelled jobs
+Don't merge history if bounds mismatch",['338822f06622b050b6261a5a03edb12c8b7ee045'],False,['widget.py'],True
+70895d4d339e759f14eeaf967ac327d19b8c7303,Fixes for linux and some additional progress reporting,['050ea562fbd87ee0227fa44e10d31e4d1e600c95'],False,"['eventloop.py', 'extension.py', 'server.py', 'server.py', 'theme.py']",True
+a35be6a0fbf09b27b415f8541e46b15d6af2827f,Fixed checkpoints not updating after connecting,['0da9df8659a4b7caa2b2016a0b54e2561d4ff540'],False,"['cinematic-photo.json', 'settings.py']",True
+663af57cab10e5a4a2e54cc1d6aca7231264a8d5,Fixed settings when there are no open documents,['59caa4c95845a0353e8a9a413cc8fb1014390f15'],False,['settings.py'],True
+78b74b3a06ee535369e8a9530796a589cbe74aae,Fixed some more multiple-of-8 issues,['06ab2db0c5d787356cd115b11fb12210b65df5b0'],False,"['image.py', 'workflow.py', 'test_image.py', 'test_workflow.py']",True
+2564f7c42380e18675fe1daafe1e17e884581d5a,"Improved inpainting masks, area and upsacling:
+* Mask grow and feather now depends on mask size, not image size
+* Image is now padded with additional context, instead of using the entire image
+* Read only relevant image region from Krita, instead of reading all and crop afterwards
+* For larger upscaling factors (>1.5x) use upscaling model
+* -> Upscaling model NKMD Superscale now required download
+* -> Fixes block artifacts and results in sharper images
+* Fixed connection settings not being updated
+* Fixed connection error when nodes are missing
+* Improved performance of mask -> image conversion",['78b74b3a06ee535369e8a9530796a589cbe74aae'],False,"['README.md', 'client.py', 'comfyworkflow.py', 'document.py', 'image.py', 'server.py', 'settings.py', 'model.py', 'settings.py', 'workflow.py', 'lake_region.png', 'lake_region_mask.png', 'test_image.py', 'test_workflow.py']",True
+037a15f25f125fef6b07f0405bb31f692ee49c2c,"Added icons for control modes
+Better error handling when optional control-net isn't found",['74dff93b77522e2ef00c0005467885ed13018fdd'],False,"['README.md', '__init__.py', 'client.py', 'control-add-dark.svg', 'control-add-light.svg', 'control-lineart-dark.svg', 'control-lineart-light.svg', 'control-scribble-dark.svg', 'control-scribble-light.svg', 'remove-dark.svg', 'remove-light.svg', 'server.py', 'widget.py']",True
+2ca3cf7b84a973d83f680780c8d7d34cac921250,"Pass creationflags to windows process to avoid console windows from popping up
+Fixed cpu mode not being initialized on restart",['da24e4bf34925298c23a1e8474667dc2b7c31a7b'],False,['server.py'],True
+8564c83408f27618a2a69924f61c346c480403a2,"Use Python venv on Linux #2
+* venv required on eg. Debian which does not allow installing into system python
+* venv also just generally a good idea to avoid conflicts
+* better error message if python/pip cannot be found",['12f446bf8f849b642f6dfe46e3530981874a962c'],False,"['__init__.py', 'server.py', 'test_server.py']",True
+5e3c15080df1bd6bcb5a6f1d36be78cd2e58d501,Improved error for missing clip vision #1,['8564c83408f27618a2a69924f61c346c480403a2'],False,['settings.py'],True
+e379415336a863b90ed2fd431520d0db3a7f5653,"Fixed some locale / encoding issues #5
+- start ComfyUI in utf8 mode to to get utf8 output on process pipes
+- use default locale for installation process output
+- fixed pip hang when it produces gigantic error message (pipe block)",['222caaf2f20c1dce0379356cfb6389ad395da679'],False,['server.py'],True
+f5e7d596e479b0d9175d1a31138e56139dd2adc4,Added setting for random seed (for debug purpose),['67f7873ab2221311d440589e0137075b162a25d0'],False,"['comfyworkflow.py', 'server.py', 'settings.py', 'settings.py', 'workflow.py']",True
+5df98928dea49804da7c01f3c51951c5d4ba31d6,"Fixed #11
+'QNetworkReply' has no attribute 'HttpStatusCodeAttribute'",['9ab9edcdc29a54bbdfaa2782ee54d70011a4ebdb'],False,['network.py'],True
+556ed4b61a1dcbbb9105052abde5a085fa30bc9e,"Docker: use venv, extra_model_paths, various fixes",['ec3c7c0fd904c9feb1f33fdb747f07ffb974919b'],False,"['README.md', 'docker.py', 'Dockerfile', 'extra_model_paths.yaml', 'README.md', 'pre_start.sh']",True
+97fde846af68cc023653a834e37848653d9eaabb,"Switch to IPAdapter_plus extension
+* Supports CPU & DirectML, fix #16",['0480624e3c115ba8b5fbfea811558b2084fc484f'],False,"['README.md', 'client.py', 'comfyworkflow.py', 'resources.py', 'workflow.py', 'Dockerfile']",True
+fef8edf71e44ee03d0866516f27ee4afffa0e9ae,"Improved handling of sporadic websocket disconnect
+* Fixed error message when websocket is closed by server
+* Use websockets built-in reconnect behavior
+* Fixed reconnect not working after losing connection",['37017540d247413181e3b2e5443804e46150e99a'],False,"['client.py', 'connection.py', 'model.py', 'test_client.py']",True
+94dc23ea4fe6db2e7cc884ce9f4fefdcff99b9a3,Try to fix xformers install issue #17,['13c5e9ebdd72636b4de2fff585c8af10945c9d66'],False,['server.py'],True
+4cadd46e8937f8e6664e40a92ba84d0b11d3b8e9,Fixed tests,['94dc23ea4fe6db2e7cc884ce9f4fefdcff99b9a3'],False,"['__init__.py', 'test_server.py', 'test_workflow.py']",True
+960344ca9443f3906cd98813fe5c1f670541b2b3,"Added image reference as new control mode
+uses clip-vision/ip-adapter to influence images
+
+Fixed history not being restored when switching image tabs",['442234a7e0ca03df568d4afecc58eefb71ecd7b7'],False,"['document.py', 'control-image-dark.svg', 'control-image-light.svg', 'model.py', 'widget.py', 'workflow.py', 'flowers.png', 'flowers_mask.png', 'pegonia.png', 'test_workflow.py']",True
+9c084660e69e968050a6e2afe741c7764a06c1c0,Fix platform check #13,['454f2e4a55b315e1a2dca38167b864fb5f4e069f'],False,['util.py'],True
+52c2cb57d3b4d2745cd8086e7eb2384aa6e291ea,Fixed upscaling to non-multiple-8 resolutions,['65532f7b19d595e0fcdd83024eea3701a0503126'],False,['workflow.py'],True
+60b3beef868f9acacebd914be61878e3ba76f2f9,Fixed initial install & use of upscaler,['242c7f92a24cb531674a0e94b874cdef963af33f'],False,"['resources.py', 'model.py']",True
+fb75911592db93def7a9c4b53cbfe04fad4f6e7f,"Fixed creating/deleting styles
+- asserted if upscale widget had never been used",['c81184b728de8e5e6a09d64b40106f73bea45ebf'],False,['widget.py'],True
+af905a870d7b3d9000fe41bbe42899dd71db1059,Fixed download errors being silently ignored,['bb7bb2c41faa685615179ba44ebc341b4e8a931c'],False,['network.py'],True
+baedfe2f613cdf2daab0d8ae3177d83178eb8f03,"Apply image crop for inpaint to selection area
+
+Area conditioning bounds were incorrect for small areas that received a sub-region of the image as context.
+Likely cause for #36
+
+Also add minimum size (64) for areas since smaller values trigger a validation error",['a18e328cbc664f15bf6c13d20fe99e3bbad6a3b2'],False,"['image.py', 'model.py', 'workflow.py', 'lake_1536x1024_mask_bottom_right.png', 'test_image.py', 'test_workflow.py']",True
+49e59e4758b5f337bfa230ade5dfad1198a94358,Fixed server UI status updates,['32cd441fbedfa16e0310e74d94d37ddf2eae91da'],False,"['server.py', 'file_server.py']",True
+802895e5ae7cbf80ac34085fd1e1ba69275d0797,Fixed initial workload selection if only XL is installed,['874f7ae2c0ad3290927d19404cccd93c28d1a35d'],False,['server.py'],True
+50f915e01cd8e4ce93b7f4df3abba88805c5cd5c,Set fixed versions for server packages,['e724b440dda098a1dc82826830fa93811033eebb'],False,"['resources.py', 'server.py']",True
+0cfa900338f1ee7a8a066d6b5dfad25324ab3960,Fixed change style in upscale UI having no effect,['c5f3f9a416b58485abb78d67cb58e91e1572daf0'],False,['widget.py'],True
+53f6fdaf983f7af810e781aef3e195a7232883dd,Fixed control layer not respecting style change,['0cfa900338f1ee7a8a066d6b5dfad25324ab3960'],False,['widget.py'],True
+4b9659607edaa5989bcb38742abb4060a8f9d34b,"Scale live preview display
+Copy live results as layer to image
+Fix toggle action to include live workspace",['88fbeea5862dc607d6824b0478b9b8f9d414001c'],False,"['document.py', 'image.py', 'actions.py', 'model.py', 'widget.py']",True
+444dc49a9dc5ea321bd5d6fb9a796d97a0f5c06c,"Icons for live mode
+Fixed error handling",['1efe4175927c16c21be0917bed31d08321536cec'],False,"['copy-image-dark.svg', 'copy-image-light.svg', 'pause-dark.svg', 'pause-light.svg', 'play-dark.svg', 'play-light.svg', 'random-dark.svg', 'random-light.svg', 'workspace-live-dark.svg', 'workspace-live-light.svg', 'model.py', 'widget.py']",True
+689ae8a570055977f8257e91f19f76fa9ee1f91f,"Fix welcome messages, initial style",['a1b633d71ed1426312cb70bfe9b09f92124659ff'],False,"['server.py', 'model.py', 'widget.py']",True
+1ab14293674175df21aeb2d5fb2ad2aedff960e0,Fix typo in extra_model_paths for docker,['355793e81876dc27b635a8fb5e38acda42444f9c'],False,['extra_model_paths.yaml'],True
+f6d0dfce1b4526f4f2cb3ac9b1e7ec6f0da19c5f,Detect safetensors version of clip vision model (fix #54),['fa38c7ab460f32811e0084dd895c934ed1adf71c'],False,"['client.py', 'comfy-requirements.md']",True
+00ac67e2c4b0c3f9d911619b67319ca535d3e23c,Fix preview toggle & apply #52,['f6d0dfce1b4526f4f2cb3ac9b1e7ec6f0da19c5f'],False,['document.py'],True
+8d0102a5bf70385d0f3f08d061c1bbcd82360da5,"Fix issue with text disappearing in 1-line widget #59
+can't seem to disable scroll in text edit, so replacing with line edit",['00ac67e2c4b0c3f9d911619b67319ca535d3e23c'],False,['widget.py'],True
+eb608e5e0d0a5ed02b77a5cfb5cbead72808de10,Fix plugin version / server version mixup #65,['1600c9f8d6bfe67e1653e78fd6768c92c8698514'],False,['server.py'],True
+35573c04bec21d2bc6bf70a070fdcc45acc661b6,Fix issue with long paths on windows #87,['c4b4c8fa4925cd40b18e1913caa46b3fbd126026'],False,"['server.py', 'util.py']",True
+e745c70fc8e3df1dd1b4a8ac129684c55bbfc19f,Fix not being able to install missing nodes,['4e40e627c080335f795482c921a47e5ce58275ce'],False,['server.py'],True
+1da1563e3263bddc5ac661559dec4fb2a65d9223,"Make install detection and actual install consistent #80
+- Report an error directly when trying to install something but the target folder is already there and not empty (previously would ignore and move on)",['e745c70fc8e3df1dd1b4a8ac129684c55bbfc19f'],False,"['resources.py', 'server.py']",True
+bf0233eb574223a1847cd6f2f662809f1f6a06eb,Add error message and troubleshooting section for common issue,['821b4325352f275341e28ac8be4caaa484aa5a55'],False,"['README.md', '__init__.py']",True
+169fb6d7a3ca7254dbe94469b43a0a192da3e8bf,corrects the link to directly point to the download source,['bd6e4f1099079b76fff8227e54f3ca84538e8a86'],False,['resources.py'],True
+09e83ca0606d57e6e880828dce56c060acc4a488,fix: resolve bug with icon color not adapting to themes,['169fb6d7a3ca7254dbe94469b43a0a192da3e8bf'],False,"['control-stencil-dark.svg', 'control-stencil-light.svg']",True
+b5796f44fb16d8e941acbd81e91770ead951b85e,"Refactor/fix some issues with prompt text boxes
+- use same widgets for generate & live
+- abstract away the switch between QLineEdit and QPlaintTextEdit
+- fixed negative prompt not updated in the UI when switching documents
+- show negative prompt box in live mode if enabled in settings #98",['a403ce0b0142a27b955e216f626fa9d8aaebbb49'],False,['widget.py'],True
+96ab50488920ee9097250fad2e47e76bd71e4f1d,Fix broken inpaint/outpaint when it involves upscale #121,['db43f38d58d352344693a92ba651352c36d8518a'],False,['workflow.py'],True
+cd01eb814bed1e9a0e43ab91f216e376b30c163d,Fix scenario where server needs an upgrade AND a new required model,['5645eb33820252656470515865d806895a2baa60'],False,['server.py'],True
+373c59f9bf0e4e2ce9437e5ab17799dedc5a1d4d,"Performance upgrade by using KSamplerAdvanced with fewer steps
+
+Setting for advanced KSampler use
+
+ksampler_advanced method, denoise calculations
+
+Use ksampler_advanced when relevant
+
+Don't use sampler_steps_upscaling with use_advanced_sampler
+
+Don't use advanced sampler method for live mode
+
+Removed unnecessary checkbox
+
+New parameter min_steps for ksampler_advanced
+
+Ensures live mode always uses the predefined steps number even with ksampler_advanced
+
+Using math.floor when rounding start_at_step according to min_steps
+
+Corrected a double argument in inpaint ksampler_advanced call
+
+Remove use_advanced_sampler setting, ksampler_advanced is now used by default
+
+Add the correct steps number to sample_count
+
+Moved the start_at_step calculation to _apply_strength method. min_steps replaced by fixed_steps parameter
+
+Refactor, moved _apply_strength call inside _sampler_params method
+
+Replaced fixed_steps parameter by min_steps in _apply_strength . Set min_step to '1' in normal rendering, and to 'steps' in live mode.
+
+Removed unwanted start_at_step param key when _sampler_params is called by the upscaler",['fac13cfd6ffbf93679ce9c25b8f6f8fc29d07dd5'],False,"['comfyworkflow.py', 'workflow.py', 'test_client.py']",True
+86493b03b28a455a83512f1ece41adf9fab4a534,"Removed entirely sampler_steps_upscaling style parameter
+
+_sampler_params method parameters update : set default 'strength' to 1.0, replaced 'upscale' by 'advanced'
+
+Removed 'is_upscaling' parameter from get_sampler_config method
+
+Corrected _sampler_params 'advanced' param behaviour",['373c59f9bf0e4e2ce9437e5ab17799dedc5a1d4d'],False,"['style.py', 'cinematic-photo-xl.json', 'cinematic-photo.json', 'digital-artwork-xl.json', 'digital-artwork.json', 'settings.py', 'workflow.py']",True
+5f60c1f96f003d923a657c9a1818bb5e19052c7d,"Reorganize files and imports:
+Split up model.py
+Split up widget.py
+Clean up module imports
+Use explicit signals (bit more boilerplate, but auto-completion and type check support)
+UI event refactor: fixes",['e7b37c226682d2df7464fe749d9ac3dd829adc44'],False,"['__init__.py', 'connection.py', 'control.py', 'extension.py', 'jobs.py', 'model.py', 'pose.py', 'properties.py', 'resources.py', 'server.py', 'style.py', '__init__.py', 'actions.py', 'diffusion.py', 'generation.py', 'live.py', 'server.py', 'settings.py', 'upscale.py', 'widget.py', 'workflow.py', 'test_client.py', 'test_image.py', 'test_pose.py', 'test_properties.py', 'test_server.py', 'test_settings.py', 'test_workflow.py']",True
+4437b99fd00a459b0c20445c2ea6fc43b064be99,"Merge branch 'ui-events'
+Hopefully fixes many UI quirks, #85, #114","['e147c5b03969c5a24a074d89e2ad1d1dc153a020', '5f60c1f96f003d923a657c9a1818bb5e19052c7d']",True,[],True
+840315761c0bebf5b77562f9d73aaca278637230,Fix layer observer after document is closed,['b68b920756f5a8988c44cbcc65ad8a6ae448b6bb'],False,['document.py'],True
+b1865d1cce125728f805fab9d81730d926264a68,Fix pose extraction with newer versions of comfyui_controlnet_aux #165,['b8b43bd923f5d2f886fbe96ef2b134b9316622be'],False,['pose.py'],True
+e6a843039d259bacb8c472239b47f338f301d0c5,"Use arrow up/arrow down key to adjust attention weight in prompt input box (#171)
+
+* :construction: wip
+
+* :hammer: refactor and add tests
+
+* :construction: Do full CFG/AST of language
+
+* nits
+
+* :bug: Fix single line
+
+* :bug: Restore selection
+
+* handle selection
+
+* fix all issues
+
+* remove square/angle bracket support
+
+* Bind to Ctrl + arrow key
+
+* :fire: Remove added default style
+
+* nits",['28a6a99868ab3e0316b76fc0d703b8c30ac97393'],False,"['attention_edit.py', 'widget.py', 'test_attention_edit.py']",True
+e1e3f0b84f881a8abdc21642a27e3f12e05d7446,"Explicitly install wheel, setuptools #160 #185 #187
+- on some systems there are errors regarding missing 'bdist_wheel' or 'setuptools'
+- bit unclear why, shouldn't they come with pip?",['0e510a66ac855560968d61f822b149fe8061a7c4'],False,['server.py'],True
+cf127d890e1302196a37ea8d4d10597e4719b9df,"CI with GitHub workflows #179:
+- support type checks with pyright
+- add github workflow for lint/typecheck/test
+- configure inclusion/exclusion rules for black
+- can now be run from the root dir
+- move all downloaded models to one folder for caching
+- adds cache to github workflow
+- add dependencies for type checking
+- fix type check issues with latest PyQt5 module
+- fix download_models minimal missing control nets
+- ignore windows-only constant in type checks
+- move image out of LFS for CI tests it's tiny, and the rest of the images aren't needed at the moment",['3522e1b1ade5423ea561950a99dca972d7649f6e'],False,"['test.yml', '.gitignore', 'CONTRIBUTING.md', 'attention_edit.py', 'client.py', 'image.py', 'network.py', 'server.py', 'generation.py', 'live.py', 'settings.py', 'theme.py', 'widget.py', 'workflow.py', 'pyproject.toml', 'requirements.txt', 'Dockerfile', 'download_models.py', 'file_server.py', 'config.py', 'conftest.py', 'outpaint_context.png', 'outpaint_context.png', 'test_attention_edit.py', 'test_server.py', 'test_settings.py', 'test_workflow.py']",True
+28aa3648a181cc94426195ef22e17abe1c50bc23,Add default upscaler name to error message,['cf127d890e1302196a37ea8d4d10597e4719b9df'],False,['client.py'],True
+9b0a89b47a4615192da0999c350c5f3662fc378b,"Improve error reporting and recover state when something goes wrong during server start
+Changed utf8 decoding to warn & fallback instead of error immediately #191",['28aa3648a181cc94426195ef22e17abe1c50bc23'],False,['server.py'],True
+594a525bf60b759b7ebf3b92972c8a7ac4dfe368,Fix assertion when closing document whie live is active,['9b0a89b47a4615192da0999c350c5f3662fc378b'],False,['model.py'],True
+4bcea66e5b93cc351569d4062d292b4b53efe561,"Parse LoRA from prompt (#198)
+
+* Parse LoRA from prompts, apply additional loras loaded
+* Removed debug line
+* Add support for negative LoRA strength
+* Lint format corrections
+* Replacing os.path by pathlib.Path calls
+* Use standard Exception, chain lora iterables
+* Change signature of load_model_with_lora, add prompt as attribute
+* Change signature of _parse_loras, get loras list instead of Client
+* New test for _parse_lora method
+* Update attention edit to support '<', '>' delimiters
+* Test angle brackets attention edit
+* Lint corrections",['032337ca35565957a4b451a2440b7a6513b6e6cf'],False,"['attention_edit.py', 'workflow.py', 'test_attention_edit.py', 'test_workflow.py']",True
+fc04e056f9c73d9c09b4b40711f8416a06e3bca1,"Fix visibility and enabled state of ""Add pose"" button #200",['a976b9aa2e37c961a2c18c7bd8a0e791f9438cc2'],False,"['control.py', 'document.py', 'widget.py']",True
+a4f7b83134c713e13f82433f7b6a6082e905fa7f,Fix preview layer update whenever a job finishes #201,['fc04e056f9c73d9c09b4b40711f8416a06e3bca1'],False,['model.py'],True
+3ac1405f3727df1d176c68d56cfa4dbce588a7a8,Fix history widget layout for large width #210,['a4f7b83134c713e13f82433f7b6a6082e905fa7f'],False,['generation.py'],True
+ac13e208ad741c932060f90b538470c1fae108a4,Fix upscale target resolution mismatch causing broken image,['c718844917b5212a058dfbed127ce15a7d3a3f4d'],False,['model.py'],True
+0c42f5f405ed961a3071d4ac9bf0180d830ae419,Fix layer name not updated in control layer UI #217,['ac13e208ad741c932060f90b538470c1fae108a4'],False,['document.py'],True
+bf631044821bdc39f5f4948e25c9494c4cebbb34,Fix checkpoint/lora refresh button not working,['ee234645e7164703aed14d3bdd4d393fa07c303d'],False,['settings.py'],True
+e6f4db3509ebaee6396abf02335733ca13ca5e62,Document common questions and issues,['539833769f8810d0c51f80a1054021f8d428b50a'],False,"['README.md', 'common-issues.md', 'common-issues-greyed-out.png', 'common-issues-log-files.png']",True
+f42025351709aaeb5ee275589a298ec08deba17a,Common issues tweaks,['e6f4db3509ebaee6396abf02335733ca13ca5e62'],False,"['README.md', 'common-issues.md']",True
+3c3bd77089b83b9a2c2515a1e23e642f65fc4388,Fix issue with custom nodes that don't have required inputs #266,['09e5ac8c4b70b66abb2fabd160bbc6ad5e2ed50e'],False,"['__init__.py', 'client.py']",True
+d3cf46dc03fcc570d2826fb97c4af2ee5e3c126c,Common issues: mac ssl certificate issue,['94c2dfa0f45276bd6ac29185d3249a442424ebda'],False,['common-issues.md'],True
+76fce10f854870dca7550f2a8d5f82d7501ce2e7,Type check fixes,['d3cf46dc03fcc570d2826fb97c4af2ee5e3c126c'],False,"['attention_edit.py', 'connection.py', 'control.py', 'document.py', 'extension.py', 'image.py', 'persistence.py', 'properties.py', 'diffusion.py', 'generation.py', 'server.py', 'settings.py', 'switch.py', 'widget.py']",True
+5940ecda26791e34ed44bb49b1ea0fb1059b4a9b,Fix division by zero when all ip-adapter weights are 0 #271,['76fce10f854870dca7550f2a8d5f82d7501ce2e7'],False,['workflow.py'],True
+9865c23f4c7624ae6bb740cef437ea670b7aec42,Fix crash when setting upscale factor to non-0.5 increment #264,['5940ecda26791e34ed44bb49b1ea0fb1059b4a9b'],False,['upscale.py'],True
+f56119b18bb38f6ab16a77f8b0568fa8e5ec8aba,"Fix result thumbnails not scaling with display (Windows) #278
+also adds minimum height, apply button should never cover the image entirely",['9865c23f4c7624ae6bb740cef437ea670b7aec42'],False,"['image.py', 'generation.py', 'theme.py']",True
+5fb2c94e862e5d9f9d451ff9b7d2d733510927ca,Fix history UI not being updated when old images are pruned,['eff2ec6a3688aa43537d56ba64d093c37a541a2c'],False,"['jobs.py', 'generation.py']",True
+7a35bebb630c179289479353f0e651d567e0bc60,"Fix live mode and persist workspace
+the is_active check is still needed, fixes #282",['5fb2c94e862e5d9f9d451ff9b7d2d733510927ca'],False,"['document.py', 'model.py']",True
+65380f053d74e448b351e689b746935aa48b585c,"Extend queue popup menu with batch count and seed #133 #139
+- batch count disabled for upscale, it doesn't fit in without a multiple-result-preview mechanism
+- live mode uses the same seed as generate/upscale
+- removed the fixed seed option from the settings",['ace639b0871e2189b9eaf43d728384f15bc57109'],False,"['comfyworkflow.py', 'cancel-dark.svg', 'cancel-light.svg', 'model.py', 'settings.py', 'generation.py', 'live.py', 'settings.py', 'upscale.py', 'widget.py', 'workflow.py', 'test_workflow.py']",True
+bdbf52d11ec27c2bcf3e5fc50c91f3d9ddc73864,Fix initial state of queue popup,['faf23668f68be483d0baa8807659db46a8eacf86'],False,['widget.py'],True
+1df9afad755f00c8e5d1ad85fa3c698e6412e779,"Added context menu to history widget:
+- copy previous (negative) prompt
+- copy previous seed
+- fix seed sometimes not fitting into int32
+- persist negative prompt in history
+- new history section when negative prompt changes
+- close popup when it is clicked (outside a child widget)",['bdbf52d11ec27c2bcf3e5fc50c91f3d9ddc73864'],False,"['jobs.py', 'model.py', 'persistence.py', 'generation.py', 'widget.py', 'workflow.py']",True
+884f4f8d694586fe7cbb55053385230ae784d357,"Resolution tests, fixes, tweaks",['a640654b20ae2203dd68c0c5900b2fb9c6250320'],False,"['image.py', 'workflow.py', 'test_workflow.py']",True
+f7f83ed7973e37bcafd5c811ad246de6102b9260,"Composite images in inpaint tests, fix bad scale/crop of control images in inpaint upscale, fix some resolution bugs",['68d39cf30084fbbb4307ee3c1c865e68ffaa551d'],False,"['workflow.py', 'file_server.py', 'test_settings.py', 'test_workflow.py']",True
+e17292d68e40d00c28cf2d07371491a4ddc302f1,Fix upscaler name and sorting,['a0ffae95ce8c079ee28e968d9eac1a9d95eb3aeb'],False,"['client.py', 'resources.py', 'upscale.py']",True
+9819ab53e2371542a84f930e61fff760f1c85594,"Fix cancel not updating the queue count, and improve progress bar",['e17292d68e40d00c28cf2d07371491a4ddc302f1'],False,"['comfyworkflow.py', 'jobs.py', 'model.py']",True
+4a11ed46e3fd7241a1e5088450ec17f069b20f81,Fix inconsistent capitalization of model name,['0a213918749cb75bb61bb9edb7e48befcf621eac'],False,"['test.yml', 'resources.py', 'comfy-requirements.md', 'test_workflow.py']",True
+110d39f785808867123c659beefbc3dd89a98232,Fix UI overwriting previously set preferred checkpoint resolution,['e2d62fdfe36ce672d9b3163a3f52034c39c224c1'],False,"['settings.py', 'settings.py']",True
+fe115a3564e42c985c90d88ca676d97e9e4bc9fb,Fix wrong image size when height is not multiple-of-8 but width is #306,['a674fb4c2ee8a3268a82255684490a664217ba88'],False,"['document.py', 'image.py', 'workflow.py', 'test_workflow.py']",True
+4868793c482ea6a1563541d30bfdf7e037c4daec,Fix typing,['fe115a3564e42c985c90d88ca676d97e9e4bc9fb'],False,['workflow.py'],True
+c723283dd0c7ff11f3aa29e8dc8186f003bfa156,"Fix hand refiner when using selection, add test",['912b4aa13caafe4eda24fe88e6c26657e1f3e337'],False,"['comfyworkflow.py', 'document.py', 'model.py', 'workflow.py', 'character.webp', 'test_create_hand_refiner_image_left_hand.png', 'test_create_hand_refiner_image_no_mask.png', 'test_create_hand_refiner_image_right_hand.png', 'test_workflow.py']",True
+0334ea3ce889a3eacc4265068379b4e5ac309227,"Add option to dump last comfyui prompt
+- mostly for debug
+- fixed some imports
+- fixed plugin not loading if settings.json is broken",['cef4f0fb9c89f1ebf35402bd20bce2913a942ad8'],False,"['client.py', 'comfyworkflow.py', 'settings.py', 'settings.py', 'theme.py']",True
+d9707b90fe77265060ecedf70ba152241e8f7de3,"Fix some UI update issues
+- upscale model not set initially
+- default connection widget even if already connected",['25628e022f81c234b986545cc9af3816dd757a4d'],False,"['model.py', 'properties.py', 'diffusion.py']",True
+d9ba06051bb396fcde7535e5aab7e256606c706f,"Less convenient but more robust version of live recording
+- previous one could lead to synchronization issues due to actions running on wrong layers",['a48699d070c49301cfec6be5c569d7e4184b54bc'],False,"['document.py', 'model.py']",True
+033bb1425ba0cd2bec3d4b89e4d07c6e3c9762ac,Fix image fill falloff radius (should be 0 for outpaint),['8ff6d1fd899f74c9702c874b306cbef68f864d6d'],False,"['comfyworkflow.py', 'workflow.py', 'test_workflow.py']",True
+dc71d457b40840b4d739d69c18e81bd7f7b3cd8b,"Change default inpaint model
+Fix generate button after canvas change",['d1df87a60f494d5e072b10448501aa7ef8bc36fa'],False,"['client.py', 'resources.py', 'generation.py', 'workflow.py']",True
+55decdbe180cb5e32edaf874d762314c0d894e11,"Fix document event connection bug, cache existing document wrappers",['9f0eb2c60e02343cc3801591c881be77e089e4be'],False,"['document.py', 'model.py', 'pyproject.toml']",True
+cdc793367f181cb72d7e33a746c3c8692b23f277,Fixed context layer update,['0886ec2fd4fc7c0e452d9f0b69c46706d4688396'],False,['generation.py'],True
+d42ac1205bcad10d4fbe35d121463754d19a4623,Fix test,['cdc793367f181cb72d7e33a746c3c8692b23f277'],False,['test_workflow.py'],True
+5d72756e1afc3474951bcba4aa30495c1ac4d98c,Fix error message for missing inpaint model,['d42ac1205bcad10d4fbe35d121463754d19a4623'],False,"['client.py', 'settings.py']",True
+eb806688b1a95f9557f895a220c9d1fb4c064174,Fix crash after flatten image with preview layer #381,['5d72756e1afc3474951bcba4aa30495c1ac4d98c'],False,['model.py'],True
+c63b10e752e32eeb088b83ec8bd5591c927c41f9,Don't error out if there is a text encoding issue for python version check #370,['b212ff7cb4604d45c9ab4b679e451ff77479baa9'],False,['server.py'],True
+95de66bef7c54b851a6084ee8daae39bbd11e8d1,"Don't rebuild Lora path on client, use the original strings from the server #307 #375
+- to fix windows vs linux path separator mismatch",['c63b10e752e32eeb088b83ec8bd5591c927c41f9'],False,"['settings.py', 'util.py', 'test_util.py']",True
+0b653b104bfdbbdd9e318382b134d187f493dcf3,Fix path dict test on linux,['a52f3a175182bddf9a3e59e4e79faea1b7186729'],False,['test_util.py'],True
+c5e27a66da30cc9a55bc4843c95a45cb2954f9a2,Fix generate button visible when blur controlnet is selected #369,['0b653b104bfdbbdd9e318382b134d187f493dcf3'],False,['control.py'],True
+2fa83e426c4d5425a6194f9ca5c5f82f1ea8f274,"Add queue_front parameter to enqueue method (#380)
+
+* Add queue_front parameter to enqueue method
+* Fix formattin to satisfy linting rule (via black)",['6ef0d7e7ba79f5a7b6238a2d88a95bd7357947c4'],False,"['client.py', 'model.py', 'widget.py']",True
+22a68358bf29128a2cf9a96d600c5a4a1188a2d2,Fix #389 - don't emit multiple selection events,['2fa83e426c4d5425a6194f9ca5c5f82f1ea8f274'],False,"['README.md', 'jobs.py', 'model.py']",True
+b28a7e6dfe3e66204c7041aca03960ddb0c98bc7,"Fix package script, add wiki link",['ae487cc5712e4ff086501f75e4eac77af5a31f72'],False,"['README.md', 'package.py']",True
+fbc6f2f0678f8512e73e622268be48f6baa194cc,Fix bad default for spin box step #393,['b28a7e6dfe3e66204c7041aca03960ddb0c98bc7'],False,['settings.py'],True
+f3b16fc95834ccad8c88e23c83a3c7e25d0614d7,"Fix backup during upgrade copying files instead of moving them
+- parent folder must exist for move to work",['fbc6f2f0678f8512e73e622268be48f6baa194cc'],False,"['test.yml', 'server.py']",True
+f9a2e411d6c83e71dcc0be15437f7bf4b6f07079,Disable server path edit while running and fix server state UI inconsistencies,['ee3556d1698e865adcadef644db1292538d437e9'],False,"['server.py', 'server.py', 'win32.py']",True
+78dfe840ca28283df3493d7f3526b34aca2f8805,Try to fix server module import issues on linux #404,['bfbf4e541691cc8e5565d5ae1a2b8f2776139011'],False,['util.py'],True
+32dd5b37b06b5d46c320172ba6fd04286f413f01,"Extent generate hotkey to work also for live mode #414
+- also fixed workspace switch hotkeys",['440ba219ca2ba9924c7665a16b8b8d8da6bcf0ed'],False,"['ai_diffusion.action', 'extension.py', 'actions.py']",True
+30dacd92771c9dacc3de821751f72446ba497dc2,Better error message for some common server startup failures,['ad427122103b1bdeb3135351a4bc32748ff5dc35'],False,['server.py'],True
+7fcbc3c0c8d85300afe869a6810660f46d6cf88a,"Move user files (settings, logs, styles) to separate folder outside of installation path #422 #394
+- styles are read from both install and user dir
+- also reads style sub-folders recursively now #346
+- fixed some issues with styles when there is no connection yet",['30dacd92771c9dacc3de821751f72446ba497dc2'],False,"['.gitignore', '__init__.py', 'client.py', 'settings.py', 'style.py', 'server.py', 'settings.py', 'util.py', 'test_settings.py']",True
+5c3d878f29565cf8f088cc3a805154c8ab6e2c1d,Fix mask bounds computation,['0e8cc3a918a3bcb484be8959fba9e7629edb60eb'],False,"['image.py', 'model.py']",True
+36a010e9f88302d48a99bd221a3de4a4ec399213,Fix crash when generating control image,['a1db1662114861ba351a3779dcf734d37bd0a7f3'],False,"['image.py', 'resolution.py', 'workflow.py']",True
+910ae367bd177d7f1dbfb41f37cad9d469bad179,Expose cloud service in UI; improve error handling,['56ef76cfa41e7cc8617fb953301a1a12e9652288'],False,"['client.py', 'cloud_client.py', 'comfy_workflow.py', 'connection.py', 'model.py', 'network.py', 'root.py', 'settings.py', 'settings.py', 'workflow.py']",True
+be11c2154df21ac98f5b2a3c63088ae5f38a0b93,Fix batch count,['910ae367bd177d7f1dbfb41f37cad9d469bad179'],False,"['api.py', 'test_pod.py']",True
+34295ca19817ecb2caefb2e50445250580996d87,Use fixed batch size for cloud,['be11c2154df21ac98f5b2a3c63088ae5f38a0b93'],False,['resolution.py'],True
+be815e41264673fa0c9142ec8f2f2d9ea174edf8,Fix issues with rp endpoint,['34295ca19817ecb2caefb2e50445250580996d87'],False,"['cloud_client.py', 'network.py', 'settings.py', 'conftest.py', 'test_pod.py']",True
+50844f971eb2d65c5aa82b70e9a39f3fb6b6096e,Type fixes,['ac3e197627852e0fb5d117fdcd87d579904e5a8a'],False,"['client.py', 'cloud_client.py', 'comfy_client.py', 'server.py']",True
+d94814ebe7a65a23d10692f3cbd41917e42efb67,Fix animation workspace,['91c0cf6992389dc80a43ee3a809fd2893d564b35'],False,"['jobs.py', 'model.py']",True
+757dbf9378a25db86bc036da57b2a31241044b0a,"Support input image transfer via S3
+- will probably not trigger often because compressed inputs rarely exceed 3.5MB
+
+Also enabled workflow tests for cloud client and fixed consistency issues",['21237cb28f61e0b88bba9e31818dfbffe5ba7d20'],False,"['api.py', 'cloud_client.py', 'comfy_workflow.py', 'image.py', 'network.py', 'resources.py', 'workflow.py', 'test_api.py', 'test_image.py', 'test_service.py', 'test_workflow.py']",True
+9624247ccfe0e85b689b3bee80b45c71faf6c27e,Use fixed performance settings for cloud client,['757dbf9378a25db86bc036da57b2a31241044b0a'],False,"['client.py', 'cloud_client.py', 'comfy_client.py', 'model.py', 'resolution.py', 'settings.py', 'workflow.py', 'conftest.py', 'test_resolution.py', 'test_workflow.py']",True
+ef027fae46f0890d0a626dcf03e8e9cf35e3b473,Fix package name,['106bebe5d71db99a500fd176fd387f1c5e70fd9d'],False,['requirements.txt'],True
+432d87e106081c33d30f1919cf9ddc3d5d96f3dc,Fix install test and file server,['ef027fae46f0890d0a626dcf03e8e9cf35e3b473'],False,"['cloud_client.py', 'server.py', 'util.py', 'pyproject.toml', 'file_server.py']",True
+350b1dfb5cba611df73ed39e61ed0b9e91910054,Fix type check,['432d87e106081c33d30f1919cf9ddc3d5d96f3dc'],False,"['widget.py', 'requirements.txt', 'test_pod.py', 'test_service.py']",True
+87c10ffb7b17cbf1f1a3f3ccfad6349b1ea230ef,Add/fix test for builtin style filter,['4725f4a15589bdd4b3c9ee4dbee92812ffaab786'],False,"['style.py', 'test_settings.py']",True
+67abe349f9b68f5f5ed777bf94181721dc252205,Fix lora path splitting when server runs on windows and client on linux/mac #477,['87c10ffb7b17cbf1f1a3f3ccfad6349b1ea230ef'],False,['util.py'],True
+6984b02e4e13beb5e72a313de0f4de4ab3a5dda8,Handle incorrect auth data better,['29675fad3d71ea9f148cfefe69f3d043dfc55f28'],False,"['cloud_client.py', 'connection.py', 'network.py']",True
+9a0475e32f747a40ecdb1ebc3186b2d20066f1aa,Fix import before reading env,['f370b28120636288bfbabe42515150f8e801e192'],False,['test_pod.py'],True
+743a08e3f3ba61559f1c949ede4bace73e2e77da,Fix server start-up error not being reported correctly,['e12d377a1ad29daa052120e8aab5b6462d6f55b1'],False,['server.py'],True
+c20c372d53cf19dc55479399a1e5b798ca0ea39e,Fix readme installation link,['743a08e3f3ba61559f1c949ede4bace73e2e77da'],False,['README.md'],True
+bdd097a0c94c0392c6559436d6b5e9b26f7ddc5b,Fix missing extension and seed for inpaint model,['c20c372d53cf19dc55479399a1e5b798ca0ea39e'],False,"['cloud_client.py', 'comfy_workflow.py', 'owls_mask_remove.webp', 'test_workflow.py']",True
+46007b856dca33054fed6f77d80c81d12b8270d4,Fix client connecting to old URL after it was updated in the UI #533,['bdd097a0c94c0392c6559436d6b5e9b26f7ddc5b'],False,['connection.py'],True
+30d9beb82ab6a63c6b69d724618027c99f9b6bbb,Fix inpaint mode affecting selection masks when using refine (<100 strength) #535,['e65ebc90c67603b3edbf1606a45e5d99a7aaa92c'],False,['model.py'],True
+658f09ca76f42f6521a85d2936206c3fd6f65a8d,Check QImageWriter return value for potential errors,['30d9beb82ab6a63c6b69d724618027c99f9b6bbb'],False,"['api.py', 'image.py']",True
+87815e39d6e0f6aa7d38847f62e76664515a6c55,"Fix live mode polling after document is closed - ref #538
+- also set live buttons (play/record) to their correct state when switching documents",['658f09ca76f42f6521a85d2936206c3fd6f65a8d'],False,"['model.py', 'live.py']",True
+a8a4ec3543b402f9ba47df2b25f7e4b92a60cb5f,Fix Lora from text input #540,['87815e39d6e0f6aa7d38847f62e76664515a6c55'],False,"['client.py', 'text.py', 'test_workflow.py']",True
+88a5c567104a335571ee2b2d4fb34148864067ab,Fix mask offsets in live mode #539,['a8a4ec3543b402f9ba47df2b25f7e4b92a60cb5f'],False,"['model.py', 'resolution.py']",True
+1975cec688e8d87b43f916d2aa02b9868d51e371,Improve error reporting for missing checkpoints and other resources #553 #550 #541 #537,['a037c09854024faa19cd427ba9119e374c576f5b'],False,"['comfy_client.py', 'resources.py', 'settings.py']",True
+3a667e6d5f5486a7a8c2193e666e91a03b425a70,Fix crash when toggling Live Record without generating an image #579,['920c0c4af90a7cb58f3af7db6d05e2554d59e61d'],False,['model.py'],True
+b7aa6d2c77c0d8722d4606b4151783fed16a887a,Fix error when using restoring settings to defaults,['4491e246512dad03bfef3fbb43007889dd610b23'],False,['settings.py'],True
+735793884649d425ad88c97c31788ebce9298fb4,Fix lora in prompt not being saved to history #586,['b7aa6d2c77c0d8722d4606b4151783fed16a887a'],False,"['jobs.py', 'model.py']",True
+794a9c61d112e8742d4bf6ece4dac753b307ffcb,Remove [Live] prefix from generated layer name and add seed #613,['3bf6257a41aec424adf389a4a9fb2655a07e69b4'],False,['model.py'],True
+afb61dc98cfa4257c2be1e1b2febac6d7b39c6de,Make process job attach error non-fatal #616,['faa7c3de37d01aeddad3fbc90be1afa44aa18f18'],False,"['util.py', 'test_server.py']",True
+60dc0ad87fe201b53f22f6e8929bb951b4a0ee63,Fix style defaults,['2c1049fb567990bc2dc30ba8ed40f1180922737b'],False,"['style.py', 'test_settings.py']",True
+d5ca8e5924f55cccae31bbd4462a9c757607ae92,Fix sampler preset selection not being written if it doesnt change steps/cfg #649,['60dc0ad87fe201b53f22f6e8929bb951b4a0ee63'],False,['style.py'],True
+04a6cf319c1f9b0b8d2583a6cdb54c7a4a940db5,Better feedback and error messages for samplers with implicit Lora,['47227c7a78ccce9ba090379d4cfa6a18a993c012'],False,"['style.py', 'workflow.py', 'test_settings.py']",True
+184d73452381b10a1244d01e5e2a691d4c1c779e,Fix some tests,['074573fdf444c73f3103a691e8135b61afe4f5a7'],False,"['test_pod.py', 'test_service.py', 'test_workflow.py']",True
+c4ec3c26af43a6c0c203f3f56ea6ac70decb5643,Fix add pose skeleton being enabled despite layer not being a vector layer #658,['184d73452381b10a1244d01e5e2a691d4c1c779e'],False,['control.py'],True
+54193edc6d6314cc7a3476a59e1025cd7b05bcae,Fix some optional member access warnings,['692ae97bf54717dbe6e9aed1c63ecba5ee0c08ab'],False,"['image.py', 'server.py', 'settings_widgets.py', 'style.py']",True
+84c0fccca1ba999205b7dc79a0fcef253e76e52a,Fix custom inpaint context via selection mask #669,['54193edc6d6314cc7a3476a59e1025cd7b05bcae'],False,"['document.py', 'model.py']",True
+63c56c32dbbf2e64488cecfafb9d98de2b1d112a,Fixed lora auto-complete not triggering on a new line,['84c0fccca1ba999205b7dc79a0fcef253e76e52a'],False,['widget.py'],True
+4ab7b26eaf7ab58a2aa4e00a1dff66946166627a,Increase range for alpha blending to get smoother transitions in cases  where differential diffusion has issues,['ebee734946aa3236ac2a950eab400c1a0455640b'],False,['comfy_workflow.py'],True
+0614c400df3fa68e77136f2d04f9ba499a530a5a,"Cloud: precompute generation cost and show it on hover
+- fix cost computation for inpaint with crop upscale
+- fix invalid style when its loaded from a document but not supported by the server",['1d7e4b917d90d3e24d83f4a9aeca00c787dcc1ba'],False,"['api.py', 'cloud_client.py', 'interstice-dark.svg', 'interstice-light.svg', 'image.py', 'model.py', 'generation.py', 'upscale.py', 'widget.py', 'util.py', 'test_service.py']",True
+12896226d7323b11cc67c4a285cd3a4c929082cc,"Hardcode checkpoint names for tests, less error prone...",['0614c400df3fa68e77136f2d04f9ba499a530a5a'],False,['config.py'],True
+4e0d3e4a4adbb789d557b105962122fe96e687fd,Fix some issues when adding/removing group layers,['f90258263c7cf5b3ab1e6dfef2a1c6b2428c55ea'],False,"['document.py', 'model.py', 'widget.py']",True
+94ad684e0fc802f34bb17d163f2e13cfc7a33a02,Quick fix live + test,['4cbaa9f0d2dad7aa0f59f66cecb0e21f439b79fe'],False,"['live.py', 'test_api.py']",True
+db920533f4989bed1560ce57e7f57748b31e2cca,Fix some tests,['a20b69f7598a3a4b3065f627f989c79f35adb541'],False,"['image.py', 'mask_op_add.png', 'mask_op_subtract.png', 'mask_op_add.png', 'mask_op_subtract.png', 'test_image.py']",True
+ab75a84351bae7578a64b770fa1be829ebfca142,Live: sort region results into the correct group and add new region button,['82e55b99aeccc7f021092a73fc78c1153958f78d'],False,"['model.py', 'generation.py', 'live.py', 'widget.py']",True
+de250abb60b1ba881f7c77f96c6e434cf4a8668b,Fix hierarchical region inpaint (mask bounds and layer selection),['1c05f344d396437d080d214d6fa95683faaf1686'],False,"['model.py', 'widget.py']",True
+b9033eb2f1399262aa10cd5ca0a24cdae5b73174,"Move region model to separate file, fix some bugs with preview and apply",['99f3b51fe3dcefec28729acd7b07ddf5caa157a0'],False,"['layer.py', 'model.py', 'persistence.py', 'region.py']",True
+5ce08233fa005ec5e80006b5fc2cefb2f3480c84,Fix group promotion on apply,['3945e1151948ef8646b0671f365bbb23920e4098'],False,['layer.py'],True
+2318141dd0b622642efb255d48198c377071f0ad,"Regional prompting / Attention couple proof of concept (#639)
+
+* Attention couple and mask manipulation nodes
+* Apply attention control layer in generate
+* Handle attention call in refine method
+* Subtract lower masks from each attention control layer mask
+* Use conditioning positive prompt
+* Prevent pointer creation to first region mask
+* Handle attention couple via the new Regions system
+* Improved attention couple usage for hires fix
+* Find region prompts according to current selection overlap
+* Check if LoRA already loaded when extracting from prompts
+* Correctly apply attention conditioning to hires pass
+* Also apply attention couple to inpaint hires pass. Fix wrong image type error.
+* Use empty background region by default
+* Prevent result initialization to overwrite {prompt} token
+* Merge region positive prompts with root positive prompt in the regions to_api
+* No more prompt merging in apply_attention. Removed unnecessary negative prompts clip encoding
+* Using ETN_AttentionCouple and ETN_ListAppend nodes to apply attention couple
+* Initialize accumulated_mask with the first valid region mask",['5ce08233fa005ec5e80006b5fc2cefb2f3480c84'],False,"['api.py', 'comfy_workflow.py', 'image.py', 'model.py', 'region.py', 'generation.py', 'workflow.py']",True
+cc5720abc3b2d0e10248b13762e54f17303c8622,Log detailed SSL errors when https connection can't be established #726,['e85b2770113c2788087ca3a15a405661c34df5da'],False,"['comfy_client.py', 'network.py']",True
+d6db29fdc564b85f5dc81b4290d13efa37880b91,Remove redundant Error: prefixes,['cc5720abc3b2d0e10248b13762e54f17303c8622'],False,"['comfy_client.py', 'settings.py', 'util.py']",True
+707ab1c81b6cf85305d79a248020d0a79e408cf0,Fix inpaint and upscale controlnet use; Makse use of background region,['d3aae966f65a5ed1f37e3f7e2cc37f459a24a0f7'],False,"['region.py', 'util.py', 'workflow.py']",True
+cb4709f41edfdbb2582abc81b265f80661f62d44,"Fix region discover with selection, also fix insert into image using wrong crop bounds",['707ab1c81b6cf85305d79a248020d0a79e408cf0'],False,"['model.py', 'region.py']",True
+37dd774b3f84cfd7b717cb63bfb78fc49d5fcb24,Live regions and composition tweaks/fixes,['ac12a717bc5b5c071a6cf452e7808bc605996d0a'],False,"['document.py', 'image.py', 'layer.py', 'model.py', 'region.py', 'live.py']",True
+57c63a0c7169ccde748f3c9fdbd5fbc688967b59,Fix issues with bounds and transparency masks,['a99c06aefd9a88cdc7620bb80070f696e4cb6b8c'],False,"['image.py', 'layer.py', 'model.py', 'region.py']",True
+8f79a3229569d7a8cb1135a3f319c00e09bdb866,Fix/add tests,['3db9a80b3b9c5f40e09fe531a06c528901055f17'],False,"['workflow.py', 'test_image.py', 'test_workflow.py']",True
+a7be06e8f6013a712409a9cd32e83e649c6b192a,Fix animation workspace,['8f79a3229569d7a8cb1135a3f319c00e09bdb866'],False,"['layer.py', 'animation.py']",True
+e385ad8e3484ee31a71f41d691595bb26a3f7c9f,Add fallback for sporadic error where active layer is not part of the layer tree,['a7be06e8f6013a712409a9cd32e83e649c6b192a'],False,['layer.py'],True
+5bf446630c29f91d6bc5fde353f521b3c46f9c89,"Show region prompt in history if it's the only region
+- also fix negative prompt containing style part #756",['06e61ea5d4549ca4f152b83373f02e71d71214f6'],False,['model.py'],True
+78ef6ef9a71a7f3deb3fd07d681531b1e41c9031,Fix issue with deserializing control layer without image,['49cfcefde11ce2768f1f782b34b5a5ae6f6f9fd6'],False,"['api.py', 'test_api.py']",True
+5218a3ecda840d47d5a914941f88fdd616e70ea3,Fix missing reference to unblur model,['78ef6ef9a71a7f3deb3fd07d681531b1e41c9031'],False,"['cloud_client.py', 'settings.py']",True
+b479c29cddd1343485aa61547ebf534ca799ba6e,Fix tile layout coordinate computation #791,['47fa1abcd7ed37000c4577f5a1f384467e8ca6a5'],False,"['resolution.py', 'workflow.py', 'test_resolution.py']",True
+7634e86ea7699251d6d920c58f6d2cc3dc757695,Fix control layers for regions now showing in live mode #788,['b479c29cddd1343485aa61547ebf534ca799ba6e'],False,['live.py'],True
+738753321ecb3f7298b759eac177aa2efa0ffad2,Fix root region control layers not being stored/loaded from .kra file #788,['7634e86ea7699251d6d920c58f6d2cc3dc757695'],False,['persistence.py'],True
+8135ea9b208251d15bf9343cbea4de58007bd499,"Fix link/unlinked not being tracked by persistence
+- could lead to regions being linked to wrong layers in saved .kra file",['0bed60e623f0f9d64ea56957e1237686a0ad9f1f'],False,['region.py'],True
+c5a5a058b65fc72e3cc07f890939ffa3e08f41c0,Fix paint-layer-to-region promotion when applying multiple results from the same batch,['8135ea9b208251d15bf9343cbea4de58007bd499'],False,['model.py'],True
+f1e0e29d6ddce2c56c54a3006696d41fc6d27a18,Fix issues where control layers are removed when unrelated layers are deleted #823,['e11336f1e9d5e1ea4e3fba5359d0a430e40247d5'],False,"['control.py', 'layer.py']",True
+540b15c2945ab8a5d2e11cbfaca68853bf0c6c21,"Fix for Mac SSL issue #840 (#841)
+
+Fix for Mac SSL issue #840",['f1e0e29d6ddce2c56c54a3006696d41fc6d27a18'],False,['comfy_client.py'],True
+abe1287a9883726a0940de2db3ef383ef612aec2,Maybe a fix for #836,['622b48e956fa5cbb8ed99ea7dbe08ceac3feb916'],False,['layer.py'],True
+690abbd0f6d253926cf0de716f6ed6ebd14a7ff3,Fix division-by-zero when using tiled upscale with target resolution lower than tile size,['abe1287a9883726a0940de2db3ef383ef612aec2'],False,"['resolution.py', 'test_resolution.py']",True
+4b3b0f555bbc741718f0a43b3bab147b7eb2d589,Fix show negative prompt toggle #857,['4b2f8adb92d444b33119bf3d8c2da58ce1dcd73a'],False,['region.py'],True
+64d6a77ca3699de222270be96f8a7190804f58f7,Don't add /ComfyUI suffix when selecting existing server install dir #859,['4b3b0f555bbc741718f0a43b3bab147b7eb2d589'],False,['server.py'],True
+ca0e03ab2c131c88235cdf663028b4545f790521,Fix apply replace behavior and tweak hyper-sd CFG,['0de0893a79af4d42c0484f0280dcc0e378d90665'],False,"['image.py', 'layer.py', 'model.py', 'samplers.json', 'cinematic-photo-xl.json', 'comic-anime.json', 'digital-artwork-xl.json', 'digital-artwork.json']",True
+da5434b4f0d6845a6b97f2badc23305f31a9c6c7,Fix crash in rare situation when image is just a tiny bit larger than preferred checkpoint image size,['341c17a2e5175f97f07cf9647aed1d0cdd3f3d2b'],False,['image.py'],True
+30381bb85ed62dd892c193260080a84c1e6afd80,Fix discard image not working for first image in the list,['23c0122f396e95fa55b85dd38e5b0e9dc2a324e7'],False,['generation.py'],True
+80721d6a430d065d1ea38e965208871027d4e0cc,Fix infinite recursion in strength spin box when changing canvas,['15fa6d6a460add4f736e62ecbd5a60e0d09b19ad'],False,['widget.py'],True
+9698646c75ccc0179e857ca6edd84723e6187d2a,Clamp mask grow and blur (just to avoid hangs when there is a bug),['80721d6a430d065d1ea38e965208871027d4e0cc'],False,['api.py'],True
+9dabd10de81d867acfcfc551c4a54cc9264d1b37,Fix strength snap assert in upscale ui,['3f9de51bb6810c64da81ec4a70642ced283f0f4f'],False,['widget.py'],True
+00612cd06b92dd0a4a2a56ecf92789b5f2852da8,Fix initial upscale model not being restricted to those installed on the server,['9dabd10de81d867acfcfc551c4a54cc9264d1b37'],False,['model.py'],True
+630d9a1b14d3d9bf7f24488e25de0c014e1dd277,"Add some error handling for LayerManager.active #862
+ - still not sure how it can fail exactly",['b91d78b7856c31af5b20053ab7fa606873220cd3'],False,['layer.py'],True
+2a6447d69f35868e86a94a6f2ed514cac8680033,Fix strength snap in live mode,['ff1033eb3f5bdfff737cb8f99b7721d873b48328'],False,['widget.py'],True
+088f0bc06ef19308e37a6a0e38ace22a88c0b3cf,Fix loading ComfyUI outputs where prompt text is not inline value #920,['885c2b018de2ffe91534f5381ff785b5c5438b75'],False,['persistence.py'],True
+260f19ec027ea29901fd88315c0c690f4b5e05da,Fix broken code which crashes Krita when replacing layers #922,['088f0bc06ef19308e37a6a0e38ace22a88c0b3cf'],False,['layer.py'],True
+34d347eca083690e77b453b2ec6e35e7fc84ddee,"Fix crash when inserting new layer after flatten image #836
+- document root node is replaced on some operations (like flatten image)",['d8719d154dd23b998e70b7ab88366d02cf818699'],False,['layer.py'],True
+1d02919974bad3fb7f89b497a47ad955aa74a023,Fix issues in tooling nodes,['c74f6d38b0a4a031d18a49377d245b71f8a04311'],False,"['resources.py', 'test_workflow.py']",True
+be1db5e3591f53ad479a394cf3849074d55b578a,Fix some issues with prompt translation setting when there is no connection,['bc31d11fbdbfe9a8508e89b98a53a02b5de42a66'],False,"['diffusion.py', 'region.py', 'settings.py']",True
+b2285496cffb0d1bdba5d00cbff94a32db87584f,"Brazilian Portuguese Translation (#988)
+
+* Spanish translation
+
+Some key words were not fully translated because they are commonly used and recognizable by people who have at least minimal exposure to terms related to artificial intelligence and stable diffusion, like 'steps', CFG, etc.
+
+The term ‘Prompt’ remains unchanged because it is widely used in various contexts, and practically everyone is accustomed to hearing it. Additionally, there is no official translation for it. However, this may be subject to change if necessary.""
+
+* small mistakes fixed
+
+* Update Spanish Translation
+
+small mistakes fixed
+
+* some words fixed
+
+- revert ""Cargas de trabajo"" to ""Workloads"", because there is a article linked in plugin about that.
+- some spell errors.
+
+* Brasilian Portuguese Translation
+
+pt-br localization.",['126e7ec380770c67ef2df552ee5d3200823d7843'],False,"['es.json', 'pt-br.json']",True
+a1f171650c37662f9edbab85cbb7393f9b663307,"Fix auto-complete popup when opening a document, small tweaks to settings",['2cf2b3dfe0e5c136533d800e95d5664eb3e69e5c'],False,"['settings.py', 'settings.py', 'widget.py']",True
+7ed2f8e256d3d5a7b199a9e59390265c4e7c04d9,"Add custom tag folder button, fix refresh",['95007e22a2d19f253667c2a6d3ba4cfe72e3e2eb'],False,"['settings.py', 'settings_widgets.py']",True
+a1a4a61850228703a8d09fe5782beed03fc75ee0,"Flux: fix guider, add cloud support",['b104862ef86eea72ccfa4badc351506214f6f02a'],False,"['api.py', 'cloud_client.py', 'comfy_workflow.py', 'resources.py', 'flux-schnell.json', 'server.py']",True
+178649cc5c842345492746f82e3f5506fa8d86e4,"Provide a Docker image without checkpoints (#973)
+
+* Ignore virtual env
+
+* Download models via script
+
+* Add parameter for default checkpoint to download
+
+* Pass args of `start.sh` to `pre_start.sh` and `post_start.sh`
+
+* Download models in pre-start
+
+* More minimal download for image
+
+* Download models to persistent storage
+
+* (Re)reduce Docker context and copy script files into docker context folder
+
+* Handle interrupted downloads
+
+* Formatter
+
+* Fix download path (persistent storage)
+
+* Continue even if download script failed
+
+* Add assertion for `default_checkpoints` parameter
+
+* Add `--no-inpaint` filter
+
+* Add `download_with_retry` & `continue_on_error`
+
+* Do not download models into image
+
+* Renaming
+
+* dry run `download_models` during Docker build to create directories
+
+* fix version confusion
+
+* simplify `copy_scripts`",['a1a4a61850228703a8d09fe5782beed03fc75ee0'],False,"['.gitignore', 'docker.py', 'Dockerfile', 'extra_model_paths.yaml', 'pre_start.sh', 'start.sh', 'download_models.py']",True
+fdbfb43dc58cf2db4a0b4d4483bb2570bae5458c,Fix invisible entry in inpaint context drop down #975,['bf6b461cbce12c087c4f65c315d7922061deb6b7'],False,['persistence.py'],True
+065a917d4c199fc7e3f088c370eb5cb27f7fee41,Fix assertion when selecting a prompt text edit for a region linked to an empty group layer #990,['fdbfb43dc58cf2db4a0b4d4483bb2570bae5458c'],False,['region.py'],True
+68070ba041ac497f85557f1a7b10f1a37d54dc64,Fix assertion when running the same upscale job twice (execution cached),['ebead479beb378ea09f0a8c91008519d587010cc'],False,['comfy_client.py'],True
+a9aa9ad8228509dbf4ee5aea7976c49a1a4e930c,Fix some typos and update translations,['09c2d8b6467858afea32c6892f83a9193c6e514a'],False,"['es.json', 'fr.json', 'ja.json', 'new_language.json.template', 'pt-br.json', 'ru.json', 'tr.json', 'zh-cn.json', 'zh-tw.json', 'region.py', 'upscale.py']",True
+8bb3ed3e776fb4d2d93998e076f10cf36afda63d,Improve error message when trying to send really large image (>16k),['ec4a30fa1c1691355ce8eafcdc4dbffe8b55c1c6'],False,"['api.py', 'cloud_client.py', 'pyproject.toml']",True
+ac9d927118206e98d177f324c2264c2ba53eb07f,"Ignore non-supported control layers instead of throwing an error
+- UI already shows a red ""not supported"" hint, which should be enough to avoid confusion",['8bb3ed3e776fb4d2d93998e076f10cf36afda63d'],False,"['control.py', 'region.py']",True
+4b3866519249ae0bac918824cf20dd67c1ef84d8,Fix error when selection is small but context is (very) large,['ac9d927118206e98d177f324c2264c2ba53eb07f'],False,['workflow.py'],True
+f2c3b59ae7e55668097ccd6c0a487e2cf6753ea8,Update inpaint-nodes to fix performance issue with inpaint mask grow on super high resolutions,['d3e1767bd95f528ffdc40d2aa18fb89f425490f7'],False,['resources.py'],True
+687dba01e50aa7d8b0489d80995fbc76c7180453,Fix error when using high strength refine region with sd3/flux,['7df760f9e4b2083c7d7d440b688f0f1536d5b586'],False,['workflow.py'],True
+2a27e3df34702e67c691e90f3ced89d6ebcf42b2,Improve common error message #1109,['2dfa5678446431ed70214ce2224b11ea0841b87c'],False,"['server.py', 'test_server.py']",True
+36a6028922746dd472b5ef1a04315091f2f3a7df,Lora UI extensions and fixes,['af8d56dd7e9579f273d552c00e589a9a4d3fe20c'],False,"['client.py', 'cloud_client.py', 'settings_widgets.py', 'style.py', 'workflow.py', 'test_workflow.py']",True
+b97b9671c4748607242475860c6ca31d0b40ffb1,Fix client websocket/job loops not being closed when breaking out the message loop,['12304ad459ba61ff033092c7bcf1d5c3323bb19a'],False,"['client.py', 'cloud_client.py', 'comfy_client.py', 'connection.py', 'test_workflow.py']",True
+5caa8400e686a337c01d81d12ae6a6e934191056,Fix seed assignment for batch requests.,['9d0140eb74c73b59f4d6785df61da84649b5f8a1'],False,['model.py'],True
+e74506c2ef8ab12df76b6240c416f33c7ad925ae,Fix Lora sorting #1139,['6f2a607bf8de0c9eb0a0b2441ce68768d372057c'],False,"['files.py', 'test_files.py']",True
+d338075b7ac2eaa3b70a98d499091c1c3d3a699c,Better errors when using incompatible lora,['49e6a109872092fb206fffd36fa2e60c726f976f'],False,"['resources.py', 'workflow.py', 'test_client.py']",True
+a0ed664e01e7301b77be250fc3722f5922549429,"Fix resource paths, clarify flux ipa error message",['09b6060e85bb710840ba0276fa2f723cffe12b4e'],False,"['cloud_client.py', 'control.py', 'resources.py']",True
+8f7395c3762f78b03f0f63099128c7d6fd24b3e5,Fix missing dependency for docker image and add flux dev as resource,['13e613ff6a52142f7e74c139600d4710ba65ea13'],False,"['__init__.py', 'resources.py', 'Dockerfile']",True
+4dd70f0a8a42bd39baebdbe36aa70abc1ba6c49d,Better error message when inpaint CN for Flux is not installed,['1f64d333edb87b45db99a42bd99720107fae4bcd'],False,['workflow.py'],True
+36ced0d99ef6fa105cd62d6c2e1d003511fb1cb8,Fix CERTIFICATE_VERIFY_FAILED errors on macOS (#1181),['4dd70f0a8a42bd39baebdbe36aa70abc1ba6c49d'],False,['comfy_client.py'],True
+ad187e59280d7e6c8dc24a6b3332f62b3dc76300,"Fix model search path prioritization
+- models that appear earlier in the search path should be preferred",['87a84c2595e009ef1ba106a0aab0004f4c500e9b'],False,['comfy_client.py'],True
+590bceadc268094af8f5e06a8eb699d313684e2c,Package publish script and auto-update fixes,['ad187e59280d7e6c8dc24a6b3332f62b3dc76300'],False,"['__init__.py', 'resources.py', 'diffusion.py', 'settings.py', 'package.py', 'test_updates.py']",True
+e997f58f8f62f73eaf4cbd218813782887020053,"Update ru.json to v1.24.0
+
+update + fix",['d88a4f8d1330a96c3b54cf36d0a43067b8e7c058'],False,['ru.json'],True
+fb03e15bd09a223262203770fae658da4388d842,Fix typo in Dockerfile,['4e17a5e8814576a1d86d2eb7c594ca0fed3e15bd'],False,['Dockerfile'],True
+e1187a11e288cb8db6bf722f1c45f292bf7d76ed,Fix handling of jobs which finish without generating any images #1182,['99b13c7313341fe2edcb42b8c06446b3a5d8d92e'],False,['comfy_client.py'],True
+5836469d980f387482632ea14a2bf4595cd8a983,Don't store graph as dict and fix tests,['b57cd9426dc9266c009391482315075a7fd11487'],False,"['comfy_workflow.py', 'custom_workflow.py', 'test_custom_workflow.py']",True
+0ba901a5e9b35738906c8cf92816dcab46c76925,Better error message when failing to read transferred images,['5836469d980f387482632ea14a2bf4595cd8a983'],False,['image.py'],True
+917b711953793ae823cfbac16326db56f54c2e8e,Fix seed being overwritten,['1428088e0f01cc319ba95e97ac2236a7c2b06f49'],False,"['workflow.py', 'test_custom_workflow.py']",True
+0e5dafc62dd9a59cd14ba729f56b5d45ccd3fa8d,Fix tests,['0e9d24e9a8883a2a5e0fc459af81db1837da2922'],False,"['custom_workflow.py', 'jobs.py', 'test_custom_workflow.py']",True
+8a4c833de5c1305f730790c045786e05b31d9c90,"Make job metadata more flexible and add style loras
+
+Fixed color of progress bar when there is a model upload",['0e5dafc62dd9a59cd14ba729f56b5d45ccd3fa8d'],False,"['custom_workflow.py', 'jobs.py', 'model.py', 'generation.py']",True
+ae6676499fa015162007c85129eef6fec7a3b853,Fix diffusion model of the first style in the list being reset to the first available checkpoint #1227,['32c17674b9bf038ccfccf7635917ae362dedee97'],False,['settings_widgets.py'],True
+d68ab15848f912fe962ef72603c7459c7b22eb06,"Fix issues with workflow params ui
+- set initial value for layer params
+- prevent combo box from imposing minimum width
+- handle images that don't match canvas size",['b7ce17992b07aed3facdf45685ca11ea790f49d9'],False,"['custom_workflow.py', 'model.py', 'custom_workflow.py', 'test_workflow.py']",True
+8c165472be6d8307734bb4ef272e154e300d6a61,"Show status errors when (temporarily) disconnected from the comfy server
+- also improve error handling when managed server is stopped or crashes",['d68ab15848f912fe962ef72603c7459c7b22eb06'],False,"['comfy_client.py', 'model.py', 'resources.py', 'server.py', 'settings.py']",True
+77197263efa3e9a55f89121f028298519cf49bdf,Fix compatibility with older documents,['b39458ee7f4cbd788da96a2d3e32485dc9f354e2'],False,['jobs.py'],True
+eaaa432814416898b59ac5dc927c6b9e5f3012f7,Fix open pose vector generation,['7775cc215f13cefacd30243e9d7b6df2d5cc7a18'],False,"['comfy_client.py', 'test_service.py']",True
+af8907f7df824a1f866b1089394d59942ac32e13,Fix custom param widget layout,['eaaa432814416898b59ac5dc927c6b9e5f3012f7'],False,['custom_workflow.py'],True
+f9559c3a8f23e4371cd51260a9ff5917907d7d9d,"Fix pose vector test, clean up unused code",['af8907f7df824a1f866b1089394d59942ac32e13'],False,"['__init__.py', 'comfy_client.py', 'download_models.py', 'test_workflow.py']",True
+da3932179b5115bb6c151166050f3b43eb9629ec,Fix some custom parameters being reset when the graph changes,['6b3747779b3795f089c73192bab347cac645547d'],False,"['comfy_workflow.py', 'custom_workflow.py', 'custom_workflow.py', 'util.py']",True
+5be4e08d33b4a87dc02f79a8300d184a7a629059,Indicate that live generaiton has stopped after an error,['da3932179b5115bb6c151166050f3b43eb9629ec'],False,['model.py'],True
+022bc243cdb047020cc05f564bfd49af5ef270b9,Fix pose preprocessor not resulting in a vector layer,['b5b0b1acfab218e1defac4f9d7c6ecead8794a73'],False,['model.py'],True
+8f3452f0687ebe55ec13ecc8a44a59e20fe4dd1f,Fix clear history action not discarding jobs #1311,['35bd62398e52407d0ddfabd562126958c84563ee'],False,"['jobs.py', 'persistence.py', 'workflow.py']",True
+edf32041f63d4bc02b729f76f8f1a3326818ce29,Ignore nodes with no outputs & better error messages when reading images,['8f3452f0687ebe55ec13ecc8a44a59e20fe4dd1f'],False,"['comfy_client.py', 'image.py']",True
+4afacd8bf21609e35917fb8ff4b573a88fb8b33a,Fix upscale workspace prompt label expanding the docker width #1302,['edf32041f63d4bc02b729f76f8f1a3326818ce29'],False,"['settings_widgets.py', 'upscale.py']",True
+2354d4b3cac1342cec0e2cfee0088f6d2e1406ba,Fix parameter nodes not being connectable (tooling-nodes),['f0c156cc9be95c12292f13c9ef6a5e72b85184bc'],False,"['__init__.py', 'resources.py']",True
+11dcb3e6bc35183de462529d498ab6beef585733,Fix custom workflow UI reserving space for text outputs when there are none,['0d9e9382c7b024f198a22c12e5ef4f7d760d61a6'],False,"['resources.py', 'custom_workflow.py']",True
+246788058175f6a579b4f96b4d5d2f9d8bc05dcd,More explicit error message when previous update went wrong,['11dcb3e6bc35183de462529d498ab6beef585733'],False,['server.py'],True
+a3135d1769d44eb31695337f9157d20bd34cd297,Update tooling nodes (parameter node fixes),['1c91eb4ba7d3c0e577bad31d37a0e4732cc34a8c'],False,"['es.json', 'fr.json', 'ja.json', 'ko.json', 'new_language.json.template', 'pt-br.json', 'ru.json', 'th.json', 'tr.json', 'zh-cn.json', 'zh-tw.json', 'resources.py']",True
+96f29e7e7cec23334f1631f8dcb4df2d4526884c,Confine error messages to a box and add copy-to-clipboard button #1351,['8b93425debbfba23d1ac7470659c608941f04543'],False,"['animation.py', 'custom_workflow.py', 'generation.py', 'live.py', 'theme.py', 'upscale.py', 'widget.py']",True
+91909e6a6b1243b7d3e2d34860cd834df0d19e24,Fix clamp not being applied to grow/feather inputs,['96f29e7e7cec23334f1631f8dcb4df2d4526884c'],False,['workflow.py'],True
+6bf72be2b7a9a6a6c132a0a955780bbfe1aa6381,Fix Lora selection box expanding the settings window #1343,['4453e371039145759ae8e4ad38e8a39ce4a5e925'],False,['style.py'],True
+1c5e832100ced03cda5148d20c00f8d35ba6b812,Fix auto-complete with trailing space #1294,['0b61e072fdddd5aca0f0fd21edab8782fe347a75'],False,['autocomplete.py'],True
+4fdc84acd4d892351b4bcb163ddc5b48b429d736,Fix text attention edit across new line #1379,['f5ffdd412616bd364ab8469f12a6389c5f2dfdd0'],False,"['text.py', 'test_text.py']",True
+3645f06620b5958a93f4cca726747cf4e2dd32bd,Update tooling nodes (fix parameter negative values),['4fdc84acd4d892351b4bcb163ddc5b48b429d736'],False,['resources.py'],True
+cb5071e9b62025190402d3e69e95c49f39e2c635,"Update es.json
+
+fixing some typographical errors and some words",['611f1e3cc9dad2ce67736c341b6388367ff5631f'],False,['es.json'],True
+75e3c921c4451c1b87f3866b235e1d7609e5b8c8,Better error when custom node pack isn't installed,['0629d24cc64558acbfdd87d817dc4af9067f3efc'],False,['comfy_workflow.py'],True
+72fe928e64a06224ee7bf935d06f7230a1d251ec,Fix link in welcome docker,['75e3c921c4451c1b87f3866b235e1d7609e5b8c8'],False,"['comfy_workflow.py', 'diffusion.py']",True
+9a85f93c51dded3e89bb7e06b27cffd1cfca7fd7,Fix missing parameter when using explicit order in custom workflow #1393,['72fe928e64a06224ee7bf935d06f7230a1d251ec'],False,"['custom_workflow.py', 'custom_workflow.py']",True
+00536f49a80b6508974291aa966d4699b94fdf71,Fix initial value for style widgets in custom workflows #1393,['9a85f93c51dded3e89bb7e06b27cffd1cfca7fd7'],False,['custom_workflow.py'],True
+482bc27c55c5d3ef164a00df9bf3916838c2f9c3,"Fix Lora strength not being loaded in Style settings if it's the first Lora of all available
+- strength widget was only updated if the lora name didn't match",['6a4aeebc13548e5cd5ac1b6460d9232654a50854'],False,['style.py'],True
+fee4d438b579391b1151434bc876c8bea80fc3ed,"Refactor error handling to forward required data to UI and format messages there
+- add special handling for insufficient funds error",['8722fa7a213ccb8472743484b325089f1b737e04'],False,"['client.py', 'cloud_client.py', 'model.py', 'animation.py', 'custom_workflow.py', 'generation.py', 'live.py', 'upscale.py', 'widget.py']",True
+a6f0c9bc1fad61bc6e078f502d5f514b44b3c990,Remove debug print,['1102597a15449d987b2253e4f4918f6129730973'],False,['text.py'],True
+4a044cf3e55dace31ea365cee8aa0179f8f57674,"Fix assertion when there is a node with a ""type"" parameter in a custom workflow #1473",['a6f0c9bc1fad61bc6e078f502d5f514b44b3c990'],False,['custom_workflow.py'],True
+af421af6eee543ed89e26cdb3e36ed075130fdad,"Pin github actions OS to ubuntu 22.04
+- some issue between OpenSSL and Qt5 on latest 24.04",['4a044cf3e55dace31ea365cee8aa0179f8f57674'],False,['test.yml'],True
+5fddaaa021c069caa35c225c00e55e416b4f5695,fix formatting,['e424897c37c9916f7808882b1772b0707f3ad3aa'],False,['autocomplete.py'],True
+c5dbce2d24402ffbcbfff859464e4057b74af5af,Fix issues when active layer change is emitted before the layer is part of the node tree #1475,['8f9b449ee341b180e44eaeee46a29253d29089d9'],False,['layer.py'],True
+2d3139f3f61f75120e951ae8feb7a604fd1f6c16,Fix style settings lock not applied on first view,['e7d59e07540546df9ae2c2521353ab724a35ab16'],False,['style.py'],True
+53c67d235b5facdedbaae682311dba3d0019e7a6,Fix empty error box being shown after connection error is resolved,['57fb56efcc54bbd2a35ef883bbf4d992fdef4c76'],False,"['model.py', 'widget.py']",True
+257072321327e369be97b5e816a533ef63e558dc,Move model database to JSON file and fix some resource Ids,['4a4e9cf0af522d7295b7d38e63122480070ce028'],False,"['cloud_client.py', 'models.json', 'resources.py', 'test_resources.py']",True
+191b9141f5831449f2617fee3de4b7860e9af1f6,"Fix ""edit a copy"" link being visible for non-built-in styles",['257072321327e369be97b5e816a533ef63e558dc'],False,['style.py'],True
+65092f1a83f7e6ceacb00e4f046edd8e8a008105,Documentation: migrate common issues and update links,['7a0fb699666ba015b4e3fe208e8f6b9e9204c8df'],False,"['server.py', 'style.py', 'server.py', 'settings.py', 'astro.config.mjs', 'grayed-out.png', 'log-files.png', 'workflow-export.png', 'common-issues.mdx']",True
+4981ce2f0ece0e21147d002b58cdba1558c6a004,Fix long layer names stretching the animation workspace UI,['f5ce8fd678b331f994680cee3d7e6713e9bea380'],False,['animation.py'],True
+6f16128672a6c566857d222da0a5ada89e1138ab,Fix input image not being scaled down when input extent drops below checkpoint resolution due to resolution multiplier #1532,['f6991a61e7b025fb63e66cc1f4824424513682cc'],False,"['resolution.py', 'test_resolution.py']",True
+f53f53b9571195e22b198e9b63100e54764bdfd2,Fix lora being applied per region even when it's part of the root prompt,['0be8cbe80e6a3b115bf407c3af16f0c7864b5454'],False,['workflow.py'],True
+1bf09855f3d1d3c8ea4a173460e6c944211c48bc,"Documentation: title, keyword & style tweaks, fixed imports",['5ffeae58a07b384a5e0a4964c3a5ce35c5246e85'],False,"['astro.config.mjs', 'Header.astro', 'Hero.astro', 'PluginIcon.astro', 'SideBySide.astro', 'index.mdx', 'regions.mdx', 'custom.css']",True
+5211a45a626961fdca34ab6cadb48f7a75e277e1,Documentation: typo fixes,['1bf09855f3d1d3c8ea4a173460e6c944211c48bc'],False,"['SideBySide.astro', 'index.mdx', 'regions.mdx', 'custom.css']",True
+707ec0c1c11accb7bce8b12536fecb27371e205e,Fixes for docker/cloud,['247b66165b74d88f691a8b57e25f27cae54efcc1'],False,"['api.py', 'cloud_client.py', 'resources.py', 'anime-noobai-xl.json', 'workflow.py', 'docker.py', 'Dockerfile', 'extra_model_paths.yaml', 'download_models.py', 'test_service.py']",True
+ab35bfb6941ed62c9f310c3f38dd31d9e0b54a4b,"Fix infinite recursion when loading a document
+- canvasChanged
+-> root.create_model
+-> ModelSync.load
+-> RecentSync.setter
+-> settings.changed
+-> CustomWorkflow.update_workflow
+-> root.active_document
+-> root.create_model
+-> [LOOP]
+
+There are many places to break the loop, fixing 3 of them hopefully also avoids similar loop in the future:
+- add model to collection after creating it BEFORE loading the document, so model_for_active_document hits the already existing model
+- don't emit settings change when updating recent (it's not directly set by user)
+- don't update whole custom graph UI when settings change.
+-- might break something?",['707ec0c1c11accb7bce8b12536fecb27371e205e'],False,"['root.py', 'settings.py', 'custom_workflow.py']",True
+38c30b18983527e22cafe06359b3053dc3961699,Fix API deserialization if a list field is missing from the JSON,['ccd19e77e9f8ed33eee148b46623d31c5b3af5a0'],False,"['api.py', 'test_api.py']",True
+9e3e273a0ce252b17b68f06fb822812ff6e8fecb,Fix missing IPA face files and inputs,['9427bb20cc847dd1ccf196ca3bdf254108e7a359'],False,"['cloud_client.py', 'comfy_workflow.py']",True
+10fa3603cc07539beddaeb168a8875c65ef3d883,"Fix inpaint resolution issues
+- assertion when using control with 2-pass
+- resize/crop mismatch when using max-pixel-count or multiplier",['e6dc0f89f0ae906bfa3d12620f1e5bc5ac38020c'],False,"['image.py', 'workflow.py', 'beach_depth_2304x1536.webp', 'beach_mask_2304x1536.webp', 'test_workflow.py']",True
+8ff40c71dfeecd5a90c7384a8a717df281450131,"Don't run ComfyUI in forced utf-8 mode. Instead try to determine the system locale. Close #1547
+- Krita embedded python does not report it correctly
+- not sure if this is an improvement...",['10fa3603cc07539beddaeb168a8875c65ef3d883'],False,"['server.py', 'util.py']",True
+1b62f5b710a4988fd44bb76407c88cb1e53da26d,Fix insightface install on windows not using pre-built package #1553,['b13dcd57d559cbafa85098e06fa9689731670db4'],False,['server.py'],True
+e8f78b97d5d6b273e11568320ad34a997246e668,Fix file server,['1b62f5b710a4988fd44bb76407c88cb1e53da26d'],False,['file_server.py'],True
+37f07ab1cad5fbd3bf197e2d138725c4cbe1f2bd,Better error message when there no checkpoints,['e8f78b97d5d6b273e11568320ad34a997246e668'],False,"['comfy_client.py', 'models.json', 'resources.py']",True
+c02b66f59d7b210e0bf64a93d207bb1f846045e7,"Improve reporting about missing/supported models after connecting
+- in both error and success case
+- fix ""StopIteration"" error being reported",['37f07ab1cad5fbd3bf197e2d138725c4cbe1f2bd'],False,"['client.py', 'comfy_client.py', 'connection.py', 'resources.py', 'settings.py', 'Dockerfile']",True
+18e9d4378464d90a97327642086da33ef5819f9a,Fix some accidents,['964c668a3b97ca189a8655b0ffeb43566fc2d57b'],False,"['test_client.py', 'test_image.py', 'test_workflow.py']",True
+11f3c7a25f74ba1db155bff69adc9be74f1d905f,"Remove SingleLineTextPromptWidget
+- makes code simpler
+- the multi-line widget with size of a single line still has weird bug when pressing backspace reduces the number of visible lines
+- less invasive workaround for the bug is to restore it on focus-out (slightly worse user experience tho)",['c04f3025898b8d491fd0d1d56cc84812c6f7ef84'],False,"['autocomplete.py', 'region.py', 'settings.py', 'widget.py']",True
+f67297dce1a222b3d1327e22946e1047770af2fd,Fix bug where changing settings no longer worked after an unrelated setting had been changed,['11f3c7a25f74ba1db155bff69adc9be74f1d905f'],False,['settings.py'],True
+ee57e0582d5f3602727e5064f866ab741c0b82b9,Fix #1505 with brute force,['8f66241dc21be71176f1e18e3e14ba27bb37c4c4'],False,['generation.py'],True
+90cab405cdb6ff03f01ad884b1d28f8bcc8ed92a,Enable attaching VSCode to Krita via debugpy,['1ce05c86b65c64fb433a185322852aa0e1adc211'],False,"['.gitignore', '.gitmodules', 'launch.json', 'settings.json', 'CONTRIBUTING.md', '__init__.py', 'comfy_client.py', 'debugpy', 'extension.py', 'pyproject.toml', 'requirements.txt', 'package.py', 'translation.py']",True
+c3949287d28e6deb01d65e329f76054773deec98,"More flexibility for tiled upscale #1272 #1117
+- unblur strength is a slider now
+- tile overlap can be configured
+- fix target resolution displayed wrong in some cases",['90cab405cdb6ff03f01ad884b1d28f8bcc8ed92a'],False,"['api.py', 'model.py', 'resolution.py', 'upscale.py', 'widget.py', 'workflow.py', 'test_resolution.py']",True
+d7927cf60c11da05e2249897adbd6458d30efed0,Fix custom generat animation button requiring two clicks,['ed9c735b117e2537003c4d273275b770a08a38ac'],False,['custom_workflow.py'],True
+dfbf4a4ac8721ff9c5510c88b5937adc9b96806d,Fix tests,['d7927cf60c11da05e2249897adbd6458d30efed0'],False,['test_workflow.py'],True
+a7615077a9ba20eac1d440390910c33831670092,Add a seed icon to generate button on-hover as a reminder when using fixed seed #376,['dfbf4a4ac8721ff9c5510c88b5937adc9b96806d'],False,"['seed-dark.svg', 'seed-light.svg', 'widget.py']",True
+4e29b3a2d9a32d9651a4927f22f03ecea211fef7,"Fix error when using ""prompt (negative)"" parameter in custom workflows #1579
+- also restore its redness",['a893bcfedf7a977d7e5b969278fade0c0e1451f8'],False,['custom_workflow.py'],True
+6452da654eb2d20085454706f5ade44cc289cf59,Fix crash when using shift+enter in prompt box #1580,['4e29b3a2d9a32d9651a4927f22f03ecea211fef7'],False,['widget.py'],True
+6bc0c0f7cc330a4f5c42e6c27b7211b849d97614,Only import debugpy if available locally #1582,['2a47d3fa42697d62d578ab568b8fa45df6f2d6cb'],False,['extension.py'],True
+30755ba2dbccfcace0d8882d8e4f26a7baccb594,"Fix auto-completion when text contains >2 byte wide unicode symbols #1592
+- eg. emojis
+- QTextCursor position counts 16bit-chars",['de6ee85ea8f577137e9239695db8060e827a3886'],False,['autocomplete.py'],True
+543754d15df7adf0407164eca60dd9dd1b0bebfb,"Revert ""Fix #1505 with brute force""
+
+This reverts commit ee57e0582d5f3602727e5064f866ab741c0b82b9.",['30755ba2dbccfcace0d8882d8e4f26a7baccb594'],False,['generation.py'],True
+9536fd028ed8b88525268b2c44585cbee50be3e8,Fix upscale button remaining disabled after an error occured,['92187d8996274fa2f487fe7473f2bf697147ab0c'],False,['model.py'],True
+66170263b560f53677c9d5be9e5210a767320953,Fix input masks for custom workflows with resolutions that aren't 4 byte aligned #1602,['9536fd028ed8b88525268b2c44585cbee50be3e8'],False,"['document.py', 'image.py', 'layer.py', 'test_image.py']",True
+a885ec8be5ef9dd577615fdc23d7d2ddc4501679,Fix duplicated root prompt when a single regions covers the entire image #1617,['b6758cb7145e858aa1d98b5d74758333fb0ae550'],False,['region.py'],True
+210baa792ba0fc065c5bca507d5f070805e0e6d4,Fix crash when opening more than one document with embedded custom workflow,['87440452fdb8c2ec2938409da03acfe5641b68fd'],False,"['custom_workflow.py', 'model.py', 'persistence.py', 'test_custom_workflow.py']",True
+22def85508617f14692be82a4ab31602a69908cf,Fix typo in documentation,['6d53b2d7212b9ef568d327b5724a168029049dd0'],False,['common-issues.mdx'],True
+6db31f1b3744b7824e2a954814019be6753fa0b3,Fix check for zero bounds (maybe related to comment in #846),['22def85508617f14692be82a4ab31602a69908cf'],False,['image.py'],True
+846133ce41fec8f54d7ac3bb791a909940d25053,Fix typecheck error with latest pyright,['ea37af2e59f55f9c0d001842444f4899bfad686e'],False,['client.py'],True
+b96b9ff5f531989a3f23b7fbc0597f954c6ae6d1,"Resize clip vision inputs to 224x224 #1648
+- this would have to happen anyway (model input is fixed)
+- previously was using a center crop, now it's a scale
+- stretching/squashing image contents does negatively influence references, but usually not as bad as crop",['4c51a3836a3c9f8abf950da14130c46b3af1404d'],False,['control.py'],True
+efc0f9f47dddf0eb5f5f9b87245a09ee71cf280d,Fix apply_result for custom workspace,['6f2d92d89b2e51675affde619a7c5a19e7d03147'],False,"['model.py', 'custom_workflow.py']",True
+4eb455b33c5c163f2c7ed93a15fd10baf2b111c9,"Improve first start
+- try to connect to comfyui desktop version on port 8000
+- don't show error for failed server discovery attempts",['48ee713bfb088000aa7ac0fb92a1d478447353f6'],False,"['test.yml', 'connection.py', 'root.py', 'custom_workflow.py', 'settings.py']",True
+078a179f9800ed28b4a29ac0f74b802adde79fbc,Fix negative bounds when preview old results after changing canvas size,['56b4e918b748f9f284cfc81c29d810f7633ef93a'],False,['image.py'],True
+e9f9cbd083680328ecfd6019b976ff27351a0296,"Managed install: use uv to install python and setup venv
+- hopefully resolves linux/mac issues related to incompatible python versions",['f21c3257e3227fcf07546d42735f701385384de7'],False,['server.py'],True
+38f20d42c5c8a8f84fa2b76dfdbc668ad727fa67,Fix custom painted widgets for right-to-left layouts,['abf24048272f565291a2e2feab6a5a101711610f'],False,['widget.py'],True
+616d1510d37bc4979ae528cb3dd88f1ff8d0cd0c,Fix windows server install when PSModulePath environment variable doesn't exist,['1acdfaa276bfa22720de335dd0a2b376cb056790'],False,['server.py'],True
+03730017238885f678e51401e45ba5cb9f9c8cab,Merge remote-tracking branch 'feeping/fix/close-event',"['128071aff22a80961453326308615ec262cb5583', '1f632454b579f4b57e7d7042cd55a9d33409c66c']",True,[],True
+6551fe1418b079e884b03960781f5484d627c68d,Fix insightface install on windows (pre-built whl for python 3.12) #1727,['03730017238885f678e51401e45ba5cb9f9c8cab'],False,['server.py'],True
+9d0f2995de21c6306b70b6340bb63dec30df981f,"Fix jobs not being processed correctly when enqueued directly after cancelling previous queued jobs
+- clear_queue was suspended while in the process of removing jobs
+- enqeue was able to add new jobs while clear was running
+- don't call _jobs.clear() to avoid modifying the list during iteration in other functions",['594e050a32f2e93a7578e09914d993f45f014e10'],False,['comfy_client.py'],True
+c35be6f43bba3df2195ee121d6f844c02aee1707,"Add local server maintenance options
+- verify to check model files for corruption
+- fix_models to replace specific model files
+- uninstall to remove the server (but keep models)",['7586cfe121ccf4eee65b1a6b26664d0902a4627c'],False,"['network.py', 'server.py', 'test_server.py']",True
+9284051463fcc3eabd7ff77ddeb44e36671189a7,Prevent deletion of models in ComfyUI/models folder when re-installing & error handling,['b0d0abd3f55f0906a0ddcadbe3458ac9123a8186'],False,"['server.py', 'server.py', 'file_server.py', 'test_server.py']",True
+67ef7a631a987cbb6fd4c940143287d28e4f1033,Fix default checkpoint for workflow tests,['9284051463fcc3eabd7ff77ddeb44e36671189a7'],False,"['launch.json', 'config.py']",True
+ee32b5b9fc42f4f1811518f0e6c81f1d7f5024ba,Fix missing translations and update japanese translation (by @picolet21 #1771),['67ef7a631a987cbb6fd4c940143287d28e4f1033'],False,"['ja.json', 'settings.py']",True
+0bf9c6fda7bceb03d98b653e5ded71ae6e19d682,"Fix typo ""Lean"" -> ""Learn""",['ee32b5b9fc42f4f1811518f0e6c81f1d7f5024ba'],False,"['es-ca.json', 'es.json', 'fr.json', 'ja.json', 'ko.json', 'new_language.json.template', 'pt-br.json', 'ru.json', 'th.json', 'tr.json', 'zh-cn.json', 'zh-tw.json', 'widget.py']",True
+ed58986d90da37bc1ea92361112b167f0c2e56c9,"History widget: make discard image shortcut responsive #1770
+- resolve ambiguous shortcut for Delete key
+- set cursor to next image",['c72baaba5c775f05fd4994376e33f9228250f694'],False,['generation.py'],True
+f7fb844a7cba27740cedef859f0be8e358ddd1cd,History widget: fix shift+left/right multi-selection #1786,['ed58986d90da37bc1ea92361112b167f0c2e56c9'],False,['generation.py'],True
+9af009966dc7caa8d6b1d0ed5756acc3ca6f4559,History widget: fix selection not always updated,['f7fb844a7cba27740cedef859f0be8e358ddd1cd'],False,"['generation.py', 'util.py']",True
+95df0beb9b0b4342d6c301046238d206830d3128,Fix connection timeout not being set correctly,['9af009966dc7caa8d6b1d0ed5756acc3ca6f4559'],False,"['client.py', 'comfy_client.py', 'network.py']",True
+32320e38475e921f9e449250bd7859a0ac804af1,Fix process launch for system locale failing due to bad PYTHONPATH,['5645cdb6c5474fe73caafda6ef85c62dbfc558f3'],False,"['server.py', 'util.py']",True
+68b2fb0415580481b3372785a28f320e3f316c8b,"Raise an error when trying a generate option that requires the canvas as input, but all layers are invisible/excluded
+- hopefully less confusing than giving bad results",['0833ebf319034738020592608e1d68ee774af3e1'],False,['model.py'],True
+a50dfb7f4bbc0cdd675b595b24e65decd6a189c6,Fix import in translation script; prepare 1.35.1,['8216519cb96e49b4ff037d26f3c711a7ebb5e391'],False,"['es-ca.json', 'es.json', 'fr.json', 'ja.json', 'ko.json', 'new_language.json.template', 'pt-br.json', 'ru.json', 'th.json', 'tr.json', 'zh-cn.json', 'zh-tw.json', 'pyproject.toml', 'translation.py']",True
+0d16999dab2eae644b62fd89f31bc1828aad8051,Fix edit conditioning being applied where it shouldn't be #1842,['05ef0065a7252879c49be6657a8099e6116848ea'],False,"['__init__.py', 'resources.py', 'workflow.py']",True
+6df784c663377e1fefa8ebb782443123750e0ae4,Impove error messages (validation & timeout),['59af1ca9fe14eb39064f6e6160ed60fe64bda900'],False,"['cloud_client.py', 'model.py', 'widget.py']",True
+33b0fe5a8990de430bca93c24434c021ffee5ab9,"Managed server: fix issue where old Python env (pre-uv) was used even after upgrading to a new version #1842
+- using server re-install did not fix this, since it didn't remove the python directory (now it does)",['4cf869ec11682590cd136ddf08119ae0e14ac45d'],False,['server.py'],True
+bfacafe38d8b5c41aa73f59fa2b1b952954735aa,"Fix ""enqueue at front"" causing all later jobs to no longer be tracked #1917",['6a7f02ca6d960e3b071bc7b5042cccb269a7005a'],False,['comfy_client.py'],True
+198e505a32dadb5c13da5f1569ba611e550813d4,"Try to fix macOS issues when installing pyTorch
+
+* it doesn't need an index url
+* it may not like specific version (unconfirmed)",['bdbc60a69ab53783409929c70ff11ade8de87569'],False,['server.py'],True
+da6855bc9b08ee624a6d4c5e20684e3e908b73d4,"Check prompt ID returned by ComfyUI and show error message if it doesn't match
+
+* this can happen after ef5c0a77f46a9a6909338cc8871dc1262d0d6d15 if comfy isn't updated",['6a8aa92d0ae9105b00a2aab1ea3953e82a4b4642'],False,['comfy_client.py'],True
+47160be68306610c113c9868c9fdabf6ccd15075,"Fix issues when upgrading from an old server version that used embedded python #1924
+
+* This triggered an install instead of an upgrade, which couldn't succeed
+* Now embedded python is detected as no python, and no python still allows upgrade if ComfyUI/.version are present
+* Upgrade will then install uv/venv if not found",['15f6a67ee70dfd3aa72cc66a703e637c76b39b25'],False,"['launch.json', 'root.py', 'server.py', 'diffusion.py', 'server.py', 'test_client.py', 'test_server.py']",True
+e23f07b85aa2a16f61e945c4f4539b83174d5bca,Release 1.37.2 to fix some managed server update issues,['47160be68306610c113c9868c9fdabf6ccd15075'],False,['__init__.py'],True
+a0a691cdb9b0b976f6182d0b653ffdea6bc4b6c8,Managed install: fix arch packages not being selectable when there is more than 1 workload selected,['8cc7c732cefc231a6ec842e3fb17b4c468daa02d'],False,['server.py'],True
+fafb8c1e9a2e9da622c3385519f679d20a831646,Fix wrong folder for Flux Union ControlNet,['310ccdbcd0d76eabcbf3d0efa5c5fb0ec7789300'],False,"['models.json', 'comfyui-setup.mdx']",True
+9ef8f71554ece9bb36a0f024ee4b063cde5c8e0c,"Fix hang when images finish faster than they can be saved to document history
+
+* usually only happened when comfy execution was cached
+* _save_results is called from inside asyncio eventloop",['ad4ee2667c66e147d0aa7ab396969d8bbf5aa421'],False,"['eventloop.py', 'persistence.py']",True
+0977a7228f34080da960115e53121425991e3202,"Add generation metadata to saved pngs from the generated thumbnails (from right-click or ... menu on thumbnails) (#1942)
+
+* adding generation data to pngs without adding binary dependencies on Pillow which are difficult to fulfil for all platforms
+* fixing circular imports caused by type-hinting Job
+* interim commit for choice to save metadata
+* working again after refactoring
+* Fixing ruff problems
+* updating tests
+* Fixing tests and cleaning up code
+* remove commented out lines no longer needed
+* may make writing png slightly faster
+* adding changes for naming, stray print, translations
+* remove some comments for linting exceptions caused by circular imports
+* fixing tests and formatting
+* fixing types for tests of test_text
+* ruff reformat",['30107fca6dfd76c5c92959276a36fedb76949518'],False,"['image.py', 'model.py', 'settings.py', 'text.py', 'settings.py', 'test_image.py', 'test_text.py']",True
+7c636f7e5648ee9c23da0e9a94d8261b1aaa224a,Log more detailed error when custom workflow import fails,['56014056e0d459bf755b0417c6b295f22c7797c9'],False,['custom_workflow.py'],True
+5720ef9d0ba087f28aba8bcf5da1556cff114528,"remove old performance patch xpu (#1995)
+
+* bump torch to 2.8 for xpu
+
+* remove old work around
+
+* remove old performance patch xpu
+
+* fix merge",['f6a363515d38940d7351fe9a6e45a8057c875362'],False,['workflow.py'],True

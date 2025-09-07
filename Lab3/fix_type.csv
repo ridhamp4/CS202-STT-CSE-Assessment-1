@@ -1,0 +1,812 @@
+llm_message,count
+add missing import,25
+add missing docstrings,19
+add test for,12
+add missing description,11
+add missing docstring,10
+add missing version number,9
+add missing version,9
+add missing comments,8
+add missing line,7
+add missing comment,7
+fix lint,7
+add missing examples,6
+add missing missing tag in checkpoint base model,6
+update model.py,6
+add missing doc block,6
+add missing file,5
+test,4
+add missing script,4
+add example,3
+add missing backup folder description,3
+add missing imports,3
+add test case for custom node,3
+update serverwidget.py,3
+add missing settings,3
+update historywidget.py,3
+update liveworkspace.py,3
+add missing missing import,3
+add missing test,3
+fix live widget,3
+add missing semicolon,2
+add missing missing methods,2
+add missing docs,2
+fix customworkflowwidget,2
+add comment,2
+add missing check for missing model,2
+fix failing test,2
+add missing check,2
+update model.rb,2
+fix test failure,2
+add missing test file,2
+fix bug in animation widget,2
+add missing example,2
+add missing test case for,2
+add missing missing record in config file,2
+add compositionworkflow example,2
+add more translations,2
+add missing layer in layer_1.svg,2
+add deprecation warning,2
+add test case for,2
+add examples for krita,2
+add missing connection,2
+add test for image compression speed,2
+add missing emit,2
+add missing missing tag,2
+add missing tag,2
+add docs for controllayerlist,2
+add more examples,2
+add missing doc blocks,2
+add more info,2
+add docs for customworkflowwidget,2
+update jobqueue.py,2
+add diffusion example,2
+add documentation for layer,2
+add documentation for commfy,2
+add more info about the backup folder,2
+exclude older files,1
+update cloud client for new job,1
+update unblur tool tip,1
+fix bug in combo box,1
+add more examples to the custom workspace,1
+add controllayerlist to api docs,1
+fix active region link,1
+add job region to the list of linked regions,1
+add model for results,1
+add job history,1
+add missing documentation for mecparams,1
+add examples for the choice widget,1
+add more info about the image filter,1
+add missing translations,1
+add more info about job execution,1
+add new guider example,1
+add new plugin version,1
+add server package to the list of packages,1
+add missing script and folders to nginx container,1
+fix model.inpaint.context,1
+add tests for validation and large images,1
+fix root region,1
+add more info about image filter,1
+add test for lora_meta,1
+fix issue with extract_pose_json,1
+add more documentation,1
+add server stop and stop task,1
+add docstrings for the model,1
+add more info about language files,1
+fix refine_region for sd15,1
+update description,1
+add required_custom_nodes to plugin,1
+add examples to the interstice-plugin,1
+add server startup logic,1
+fix ssl_cert_file missing on macos,1
+add examples for custom workflows,1
+add flux1-dev and flux1-schnell to checkpoint list,1
+add missing checkpoints,1
+add missing check for controlnet inpaint,1
+add imagecollection example,1
+add test for collection with connection and connection,1
+add docs for workflow collection,1
+fix model search in python 3,1
+add tests for the latest plugin version,1
+add support for new plugin versions,1
+add missing check for active comfyui connection,1
+add more info about the update state,1
+add more examples to the client,1
+add missing install script,1
+add missing characters,1
+update the help text,1
+add missing links,1
+add ip-adapter support to controllayer,1
+add model for lora and dsx,1
+add test for custom_workspace,1
+add missing lcm support,1
+add expanderbutton to the bottom of the editor,1
+add lora list and item to kraken,1
+add progress class,1
+add shutdown code to connection class,1
+add diffusion tests for diffusion,1
+add model.py,1
+add filelibrary and filefilter,1
+add test for filefilter and filesource,1
+add missing class members,1
+add example for enqueuing jobs,1
+add job parameters and classes,1
+add custom workspace,1
+add support for lora,1
+fix test_cancel,1
+add test for common errors in pip,1
+fix bug in test-http-client,1
+add model cost for model 2 and 3,1
+fix error in poselayers.py,1
+add docs for active_region_widget,1
+add documentation for rootregion and regions,1
+add link to active region,1
+add krita region,1
+add modelsync to model,1
+add documentation for sub-regions,1
+add a missing comment,1
+update inversion.py,1
+add new example,1
+add more info about the number division,1
+add missing use_single_region flag to custom_inpaint,1
+update region coverage,1
+add note about region focus,1
+add missing code to comfortableclient,1
+add download progress to the last request,1
+update connection status,1
+add more info to server log message,1
+add more coverage to root region,1
+add unique() in json.encode,1
+add examples for image detection,1
+add modeling example,1
+add more modeling example,1
+add docstrings for live_workspace,1
+add tests for mask_add and mask_sub,1
+"add docs for -46,7 +46",1
+add lora list to the editor,1
+add kritadocument and krita.selection,1
+fix custominaint in qobject,1
+fix typo in promptautocompleter,1
+add a new cost factor for the input,1
+add examples to cloud client,1
+add sodipodi support to examples,1
+add interstice-light,1
+add more images to the imagecollection class,1
+add examples to the docs,1
+add missing version comment,1
+add upscaler button and queue button to signal blocker,1
+add more examples to the workspaceselectwidget,1
+add missing `clamp` in `ml_utils.py`,1
+add test for compute_cost,1
+add missing default checkpoint,1
+add documentation for layerobserver,1
+add docs for region tree,1
+update regionpromptwidget.py,1
+add support for rgba and rgb format,1
+add documentation for overlap detection,1
+add features to extent class,1
+add tests for filelistwidget,1
+add a new layer class,1
+fix active region widget,1
+add union method to bounds class,1
+add update_layer_image method to layer manager,1
+add model for apply results,1
+add scale to image class,1
+add tests for strengthspinbox,1
+add docstrings for the enum version,1
+add check for image_count in validate_executed_node,1
+fix upscaler workspace,1
+add missing try/except in layer manager,1
+fix strengthsnapping,1
+add missing async/await,1
+add documentation for layer manager,1
+add a new example,1
+update language button,1
+update interfacesettings.py,1
+add missing language codes,1
+add vanishor translations,1
+add tag_files button,1
+add textpromptwidget to multi-line input,1
+add tag files and language buttons,1
+add tile layout for single-tile,1
+update tilelayout.py,1
+add docs for layer manager,1
+add test for region input upscale,1
+add signal and mask input to the model,1
+add background region,1
+add apply button to live widget,1
+add missing properties for image class,1
+add missing docstrings for krita layer,1
+add example for region inpainting,1
+add link to regions,1
+add conditioning properties,1
+fix padding test,1
+add layer manager,1
+add ssl_cert_file to jobinfo,1
+add test for controlinput,1
+add support for turbomodule,1
+add tilelayout.from_denoise_strength,1
+add support for tilelayout and image_extent,1
+add test for diffusion resolution multipliers,1
+update prompt_widget.py,1
+add missing model state,1
+add a changed signal to the region,1
+add link target for group layers,1
+fix example,1
+update backup.php,1
+add missing docs to diffusion-model-download.py,1
+fix test,1
+add docs for textpromptwidget,1
+add a new extension,1
+add examples for tag completion,1
+add docutils to upscaleworkspace,1
+add image class to kritadocument,1
+add missing tests for the new image class,1
+add support for alpha and grayscale 8-bit images,1
+fix coverage for single region,1
+add missing id in customworkspace,1
+add missing docstrings to model class,1
+add note about missing system dll,1
+add example for example,1
+add example for controlinput,1
+add model description,1
+add more info about submodules,1
+update connection state,1
+update root.py,1
+add server status to server stack,1
+add missing method to bounds,1
+add server.py to network access manager,1
+add example for clicking a button,1
+add promptparamwidget to the editor,1
+add examples for the generate button,1
+add seed-light,1
+add missing class member,1
+add tag completion support to promptautocompleter,1
+add a new active region widget,1
+add prompt line count and language to interfacesettings tab,1
+add styleselectwidget,1
+fix historywidget,1
+add missing url in the debugpy-websocket-list,1
+add debugpy configuration to the output,1
+add missing config for python tests,1
+add a note about the debugpy module,1
+add aimtoolsextension,1
+add seed-dark to seed,1
+add tests/server/test_image_transfer.py to ignore list,1
+fix build_package for debugpy,1
+add docs for upscaler,1
+fix padding in tilelayout,1
+add upscaler and factor widgets,1
+add story_spinbox example,1
+add support for tiled upscale,1
+add missing layout for tile layout,1
+update custom.py,1
+add shell to server script,1
+add insightface support for python 3.12,1
+add more info about job status,1
+add more tests for server state,1
+fix bug in comfortableclient.clear_job,1
+add server example,1
+add error message to prompt client,1
+add debugpy to test-utils,1
+add signal to root node,1
+add server state check and check version,1
+update connectionwidget.py,1
+add docs for server state changes,1
+add test for server.backend,1
+add more info about the server,1
+fix error reporting in model,1
+add link to model list,1
+add a test for wait_until,1
+add model sync for image saving,1
+add save_png_w_itxt method to qimage,1
+add queuemode to job results,1
+add lora metadata,1
+add language switch,1
+add test for save_png_w_itxt,1
+add tests for the new `imaging` language,1
+add server error to error box,1
+add error message for timed out jobs,1
+fix download helper,1
+add missing lora model description,1
+add tests for the latest version of the node,1
+add tests for the fix_models method,1
+fix error handling in uninstall,1
+add tests for server_dir and server_backend,1
+add missing env info,1
+add default checkpoint,1
+add documentation for apply_region_behavior,1
+add missing model description,1
+add missing layer group description,1
+add link to error box,1
+add docstrings for vae_decode and scale_refine,1
+add historywidget to the history widget,1
+add test for trim_text,1
+add missing info for missing custom nodes,1
+add more exceptions to requestmanager,1
+add test for system encoding,1
+add model class for capture,1
+add missing wording,1
+add missing missing options,1
+add customnode to the list of available nodes,1
+add test for inpaint model,1
+add test for extent scale pixel count,1
+add test for task canceling,1
+fix generation button,1
+fix tag autocomplete,1
+add test for edit_attention(),1
+add missing error message,1
+add more info to welcome widget,1
+add docstrings for param names and display names,1
+add new row to workflowparamswidget,1
+add lora_item to lora_list,1
+add more info to cloud client,1
+add docs for diffusion_workflows,1
+fix upscale widget,1
+add error box to the clipboard,1
+add errorbox to errorbox widget,1
+update example,1
+add support for custom parameter for krita,1
+update promptautocompleter.py,1
+update layer manager,1
+update style_presets.py,1
+add error handling to model,1
+add missing checkpoint entries,1
+add missing files,1
+add description of downscale and crop,1
+add upscalewidgets to the ui,1
+add test for json serialization,1
+add missing line to error message,1
+add examples to the example,1
+add control layer to model,1
+add jobqueue class,1
+fix modelsync,1
+add lora support for text encoder,1
+add support for unknwon binary image,1
+add warningicon to expanderbutton,1
+add text prompt to the tiled upscale widget,1
+add required custom nodes,1
+add more info about the modeling language,1
+update color palette for window color,1
+add more info about the language,1
+add package group to package group widget,1
+add missing word,1
+add more info about the output folder,1
+add more info to the backup example,1
+add example for animation,1
+add examples for the new layout layout,1
+add examples for region prompt and progress bar,1
+add more examples to the model,1
+add plugin version for modelresource,1
+add link to duplicate style copy,1
+add missing missing env file,1
+test the beach depth,1
+add missing missing file,1
+add more comments to the diffusion script,1
+add missing env file,1
+add missing illu_v to version list,1
+add cloud client test,1
+add root object,1
+add customworkflowwidget and customworkflowplaceholder,1
+add failing test for,1
+add imagereshapes and imagereshapes to load,1
+add tests for new input input,1
+add new model for fp16 control and qrcode,1
+add missing server node in server.py,1
+add test for longpath,1
+add insightface wheel for python 3.11,1
+add model resource and file to model_spec,1
+add missing_resources and checkpointinfo to client,1
+add missing docs for unet_gguf,1
+add missing_resources example,1
+add missing model names and descriptions,1
+add connectionsettings example,1
+add resourceid class,1
+add light mode colors,1
+add link to error message,1
+fix diffusion input,1
+add more info about sampler presets,1
+add more info to the server widget,1
+add more info about how to use the link,1
+add missing slug,1
+fix image path for grayed-out,1
+fix icon in the log file,1
+update workflow export image,1
+add docs for the common issues plugin,1
+add animationwidget,1
+add test for resolution_multiplier,1
+add documentation for region creation,1
+add krita ais to the interstice config,1
+add search component,1
+add krita arrows,1
+add missing missing interface,1
+add krita ais,1
+add note about control layers,1
+add color options for light mode,1
+add missing style tag,1
+add krita-ai-diffusion examples,1
+add checkboxes to the settingwidget,1
+add model model workspace,1
+fix error in mask,1
+add missing vae checkpoint description,1
+add link to the plugin log file link,1
+add missing model,1
+add example for control-qrcodemonster-light,1
+add examples for controlwidgets,1
+add support for downscale and positive upscale,1
+fix upgrade_required for non-installed resources,1
+add lora script to load model with lora,1
+add missing vae file,1
+add missing tag in config.js,1
+add default sampler widgets,1
+update server.py,1
+add more examples to the pipeline,1
+add missing imports to the diffusion tests,1
+add controllayer,1
+add missing imports to ignorenorenderelement,1
+add job_queue and job_done classes,1
+add job type to signal,1
+fix missing import,1
+add docs for property,1
+add SD version class,1
+add server/comfy to server_cache.py,1
+add type annotations for kits,1
+add jobs and jobs_property to historywidget,1
+add missing layer in workspace-live-light,1
+add more examples to the example,1
+add livewidgets to the model,1
+add layer 1 to layer_2 inkscape,1
+add pause-light example,1
+add layer 1 to the list of layers,1
+add example for layer_1 in kegscape,1
+add examples for layer_1,1
+add examples for random-light,1
+add missing layer insodi xml,1
+add task to report errors,1
+add server backend to upgrade,1
+add more examples to the ui,1
+add missing state check for server,1
+add example for style and upscale,1
+update welcomewidget.py,1
+add missing vae config,1
+fix error when model is missing,1
+add note about shared model,1
+update doc for hidden layers,1
+add more model widgets to livewidgets,1
+add welcomewidget to server mode,1
+add live widget,1
+add documentation for image layers,1
+controllayer.layer,1
+add more tests for server.download,1
+add tests for style_is_default,1
+add test for diffusion inpaint context,1
+add missing test for,1
+add test for --force-fp16,1
+add more comments to the code example,1
+"add examples for -193,6 +193,9",1
+add tests for selected text in editor,1
+add tests for parse_lora,1
+add missing property to layerobserver,1
+fix local_download_server,1
+add documentation for controlwidget,1
+fix model,1
+fix history widget,1
+add docs for upscaleworkspace,1
+add documentation for layer changes,1
+update settings dialog,1
+add link to the plugin logs and screenshots,1
+add missing docs to diffusion_issues.rb,1
+update common-issues-greyed-out.png,1
+add tests for selection and edit attention,1
+"add -143,12 +140,7 to generate_ai.py",1
+add upscaler to signal blocker,1
+add more info about the plugin,1
+fix import order,1
+add tests for objectwithproperties,1
+add tests for the new live parameters,1
+update layerobserver.py,1
+add more grammars to the current cursor position,1
+add signal blocker,1
+add tests for edit attention,1
+add wheel to server,1
+add missing test and check nits,1
+add docstrings for current_word and cursor_position,1
+update custom no-model.rb,1
+fix download failure,1
+add missing newline,1
+add history widget,1
+add livewidget to preview area,1
+add dialog for configuring image diffusion,1
+add missing log message,1
+add more examples to multilinetextpromptwidget,1
+add examples for training,1
+add missing module source,1
+add more image methods,1
+add documentation for the control widget,1
+add note about cloud gpu,1
+add missing docs to client.py,1
+add serverwidgets,1
+add missing header and description,1
+add missing config file,1
+update performance_settings.py,1
+add missing methods to qimage,1
+add missing docstrings for scaled_inputs,1
+add tests for image collection and mask,1
+add test for highres,1
+add examples to the examples,1
+add more examples to the workflow,1
+add autostart extension,1
+add documentation for krita,1
+add examples to the extent class,1
+add missing space,1
+add image generation,1
+add missing nodes to the connection status dialog,1
+add examples for scaledinputs,1
+add tests for image.pixel and image.to_image,1
+add test for region spread,1
+add missing docs to plugin,1
+add server state and callback,1
+add test for timer timer,1
+add control add light example,1
+add connection status,1
+add missing docutils methods,1
+add batch size to the debug image,1
+add more info to the network error handler,1
+add docs for mask and bounds,1
+add model description and add missing features,1
+add tests for clamping bounds,1
+add progress bar to the examples,1
+add a new action dialog,1
+add connection state to signal,1
+add support for uplatting latent and ddim sampler,1
+add historywidget and historywidget.remove(),1
+"add test for -27,7 +28,10",1
+add job history example,1
+add examples for the inpaint example,1
+add test for inpaint,1
+update ui for generation,1
+add connection tab,1
+add client event class,1
+update doc for show_preview,1
+add example for ip adapter,1
+add examples for layer1 control,1
+add control-lineart example,1
+add docs for upscalewidget,1
+add support for uhd,1
+add more info to comfy ui,1
+add test for python version,1
+add default style for docker.,1
+add control image example,1
+add control image light,1
+fix image image in model,1
+add control mode and history widgets,1
+add conditioning example,1
+add tests for new inpaint script,1
+add new tasks for the upscale jobs,1
+add missing_resource property to connection,1
+fix upscalewidget,1
+add retry to download,1
+add docs for bounds and masks,1
+add model for image selection,1
+add tests for the new image collection,1
+add test for inpainting,1
+update package state,1
+add docs for custom_nodes,1
+add install_comfy(),1
+add more tests to model registry,1
+add more client-related classes,1
+add control-lineart-light,1
+add new sample_count,1
+add control-scribble-dark to the last 2 examples,1
+add control-scribble-light,1
+add missing sodipodi tags,1
+add add-ons to remove-light example,1
+add examples to the krita example,1
+add example for installing and executing server,1
+add more server.py files,1
+add error message for ip_adapter and clip_vision,1
+add custom node in the download script,1
+add missing_resources doc to server class,1
+add deprecation message to ipadapter,1
+add tests for the new settings tab,1
+add support for upscaling,1
+fix download,1
+add missing commit,1
+add missing `--remove-source-files`,1
+add link to controlnet/external,1
+add missing ipadapter and ipadapterapply,1
+add ip-adapter and external tooling nodes,1
+add ip adapter support,1
+update common-issues-log-files.png,1
+add note about comfy-ui generation,1
+update controlwidgets.py,1
+add missing log,1
+add new plugin,1
+add test for pod_simple,1
+add support for multi-batches in cloud mode,1
+add missing api docs,1
+add missing methods,1
+add cloudwidgets,1
+add test for --no-server-launch,1
+add missing parameter to client.enqueue,1
+add more examples to cloudclient,1
+add server status,1
+update server mode in root,1
+add jobs in a queue,1
+add examples for workflow input and output,1
+add docs for remote gpu,1
+add missing annotation,1
+add missing image file format,1
+add tests for http methods,1
+add superscale model to list of files,1
+fix bug in control image,1
+add tests for workflowinput,1
+add documentation for serverbackend,1
+add tests for http/post and post methods,1
+add tests for diffusion example,1
+add new connectionsettings and stylesettings,1
+add pythonpath to create_process,1
+add missing actions,1
+add new workspace actions,1
+add missing method to generate/cancel,1
+add nvidia driver check,1
+add debug_dump_workflow option to client,1
+add signal for new settings.json file,1
+"add sample options to the -7,7,7 docs",1
+add serverwidget to show logs in logs,1
+add missing missing directories,1
+add example for modeling,1
+add tests for style.save(),1
+add relative_to method to bounds class,1
+add model for image inputs,1
+add scale method to image class,1
+fix image control,1
+add docstrings for create_control_image and refine_region,1
+add missing version_of(),1
+add more examples to cloud client,1
+add missing connection properties,1
+add unit tests for diffusion pod,1
+add missing client annotation,1
+add server ui to server ui,1
+add more info about the model kind,1
+add tests for the rest of the qnet api,1
+add image_data field to serializer,1
+add missing exception,1
+update live widget,1
+add test for input in lora,1
+add model for image and mask,1
+add docstrings for compute_batch_size and compute_relative_bounds,1
+add missing resources for compatibility,1
+add missing resource exception,1
+add docstrings for servermode,1
+add test for inpaint removal,1
+add docs for model,1
+add more docs to liveworkspace,1
+add test for rename_extracted_folder,1
+add test for missing sample presets,1
+update samplerwidget.py,1
+add lora list to the signal blocker,1
+add test for missing sample preset,1
+add missing dotenv,1
+add test for cloud,1
+add connection state to error state,1
+fix broken test,1
+add missing client info,1
+update controlwidget.py,1
+add example for the image input and output,1
+add docs for diffusion_input,1
+add documentation for performance,1
+add examples for examples,1
+add tests for diffusion input,1
+add tests for diffusion extent,1
+add test for diffusion_service.vercel_url,1
+add ignore flag for win32,1
+add missing ignore patterns,1
+add a comment to the test,1
+add compfyworkflow example,1
+add support for built-in styles,1
+add tests for style folder listing,1
+fix path dict generation,1
+add more info about interstice cloud,1
+update connection state when access_token is missing,1
+add missing missing docstring,1
+add a test for the new mode parametrization,1
+add -404 to error message,1
+add missing model in doc,1
+add missing type comment,1
+fix error in upgrade script,1
+update checkpoints.py,1
+add docs for diffusion history results,1
+add examples for the history widget,1
+add docs for diffusion and interface,1
+add upscale and queue button to signal blocker,1
+add signalblocker example,1
+add docstrings for sampler_params,1
+add tests for client_style,1
+add examples to the randomization menu,1
+add job.add(),1
+add docs for diffusion preview,1
+add docs for historywidget,1
+add cancel-light,1
+add queue button and cancel popups,1
+fix seed generation in image_utils.py,1
+add missing type check,1
+add scale properties for scaledextent,1
+add tests for diffusion extent conversion,1
+add examples for conditioning,1
+add test for performance preset,1
+add test for new extent,1
+add more info to the usproms example,1
+add missing documentation,1
+add cancel-dark to the sodi example,1
+add more examples to upscaler,1
+add server widget,1
+add more info about how to generate krita images,1
+add missing assert,1
+add missing task,1
+add a new controllayerlist,1
+add a missing type to the extension,1
+add support for integer dimensions in extent,1
+update modelsync.py,1
+add imagediffusionwidget,1
+add single click to history widget,1
+add more info about the offset property,1
+add more seed/noise_seed to composition,1
+add more classes to the text prompt widget,1
+add support for default control value,1
+add more examples to upscalewidget,1
+add missing annotation to image#crop,1
+add button to history widget,1
+add signalblocker to signalblocker.py,1
+add historywidget to historywidget,1
+add documentation for kritadocument,1
+add liveworkspace property,1
+add missing constants,1
+add imageupscalewithmodel example,1
+add examples to the editor,1
+fix python version in test_python_cli.py,1
+update example example,1
+fix inpainting,1
+add pyqt signal for kriak,1
+add model.py to the krita docs,1
+exclude files that are not in the cache,1
+add support for signal blocker in custominpaintwidget,1
+add tests for inpaintparams,1
+add missing inputs for sdver,1
+add more info about the resource kind,1
+add lora list to the right place,1
+add missing inputs for the new sdver,1
+add test for path_dict,1
+add test for diffusion with mixed forward slashes,1
+add support for vectorlayer,1
+add prompt to client,1
+add docs for the latest model,1
+add queue_front widget,1
+add examples to the krita diffusion example,1
+add missing `selection_changed`,1
+update package.py,1
+add new plugin version and support for inpaint,1
+add benchmark for inpaint,1
+add missing model files,1
+add tests for control mode,1
+fix issue with preferred resolution,1
+add a comment to set the content of a layer,1
+add missing docstrings for extent and bounds,1
+add more scale mode properties to scaledextent,1
+add tests for scale mode and downscale,1
+add scale extent support to scale_sd_version,1
+add example for image_to_mask and image_to_pad,1
+add kritadocument,1
+add control layer and image,1
+test binary files,1
+add support for masking in inpaint,1
+add test for hand_refiner_image,1
+add client event for missing prompt,1
+add missing mkdir,1
+add signal for kraken,1
+add more settings tabs,1
+add docs for the screen scale and version icons,1
+fix bug in bind_combo,1
+add docs for krita-document,1
+add docstrings for liveworkspace,1
+add support for tiled vae,1
